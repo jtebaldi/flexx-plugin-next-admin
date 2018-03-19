@@ -26,4 +26,11 @@ module Plugins::FlexxPluginNextAdmin::MainHelper
   def flexx_plugin_next_admin_on_plugin_options(args)
     args[:links] << link_to('Settings', admin_plugins_flexx_plugin_next_admin_settings_path)
   end
+
+  def flexx_plugin_next_admin_on_render_admin_dashboard(args) # methods dont need to have these big names
+    args.tap do |a|
+      a[:layout] = "plugins/flexx_plugin_next_admin/layouts/flexx_next_admin"
+      a[:render] = "plugins/flexx_plugin_next_admin/flexx_next_admin/dashboard"
+    end
+  end
 end
