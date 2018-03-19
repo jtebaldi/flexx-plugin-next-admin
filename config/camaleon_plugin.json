@@ -1,0 +1,13 @@
+{
+  "title": "Flexx Plugin Next Admin",
+  "descr": "",
+  "key": "flexx_plugin_next_admin",
+  "helpers": [
+    "Plugins::FlexxPluginNextAdmin::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["flexx_plugin_next_admin_on_active"],
+    "on_inactive": ["flexx_plugin_next_admin_on_inactive"],
+    "plugin_options": ["flexx_plugin_next_admin_on_plugin_options"]
+  }
+}
