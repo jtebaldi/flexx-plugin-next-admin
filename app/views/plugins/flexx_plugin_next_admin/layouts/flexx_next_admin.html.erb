@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <title>Flexx Next Admin</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>flexx. Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <%= stylesheet_link_tag    'plugins/flexx_plugin_next_admin/main.scss', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/global/modernizr.min.js', 'data-turbolinks-track' => true %>
 </head>
 <body>
-<h3>Here we can use haml or slim template files</h3>
-<h5>Todo: - add header, footer, sidebar etc.</h5>
+  <%= render 'plugins/flexx_plugin_next_admin/layouts/nav' %>
 
-<%= yield %>
+	<div class="content">
+		<%= yield %>
+	</div>
 
+	<div class="layer-container">
+
+    <!-- MENU LAYER -->
+    <%= render 'plugins/flexx_plugin_next_admin/layouts/layers/menu' %>
+
+		<!-- SEARCH LAYER -->
+		<%= render 'plugins/flexx_plugin_next_admin/layouts/layers/search' %>
+
+		<!-- USER LAYER -->
+		<%= render 'plugins/flexx_plugin_next_admin/layouts/layers/user' %>
+
+	</div><!--.layer-container-->
+
+  <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/main', 'data-turbolinks-track' => true %>
+  <script>
+    $(document).ready(function () {
+      Pleasure.init();
+      Layout.init();
+    });
+  </script>
 </body>
 </html>
