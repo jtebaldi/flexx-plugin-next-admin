@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
       #Admin Panel
       scope :admin, as: 'admin', path: PluginRoutes.system_info['admin_path_name'] do
+        namespace :next do
+          resources :contacts
+        end
+
         namespace 'plugins' do
           namespace 'flexx_plugin_next_admin' do
             controller :admin do

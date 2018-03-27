@@ -18,7 +18,7 @@
   <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/global/modernizr.min.js', 'data-turbolinks-track' => true %>
 </head>
 <body>
-  <%= render 'plugins/flexx_plugin_next_admin/layouts/nav' %>
+  <%= render 'layouts/nav' %>
 
 	<div class="content">
 		<%= yield %>
@@ -27,13 +27,13 @@
 	<div class="layer-container">
 
     <!-- MENU LAYER -->
-    <%= render 'plugins/flexx_plugin_next_admin/layouts/layers/menu' %>
+    <%= render 'layouts/layers/menu' %>
 
 		<!-- SEARCH LAYER -->
-		<%= render 'plugins/flexx_plugin_next_admin/layouts/layers/search' %>
+		<%= render 'layouts/layers/search' %>
 
 		<!-- USER LAYER -->
-		<%= render 'plugins/flexx_plugin_next_admin/layouts/layers/user' %>
+		<%= render 'layouts/layers/user' %>
 
 	</div><!--.layer-container-->
 
