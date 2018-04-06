@@ -2,7 +2,7 @@ var Pleasure = {
 
 	// Pleasure Theme Settings
 	settings: {
-		name: "Pleasure Dashboard Theme",
+		name: "flexx Dashboard",
 		version: "1.0.0",
 		rippledButtons: true,
 
@@ -10,11 +10,6 @@ var Pleasure = {
 			images: "../../assets/globals/img",
 			css: "../assets/globals/css",
 			plugins: "assets/globals/plugins"
-		},
-
-		ga: {
-			urchin: "UA-11816554-27", // UA-XXXXXX-XX
-			url: "auto" // or subdomain.teamfox.co
 		}
 	},
 

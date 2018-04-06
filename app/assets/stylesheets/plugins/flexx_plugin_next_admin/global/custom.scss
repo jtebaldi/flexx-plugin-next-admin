@@ -117,3 +117,73 @@
 .overlay .logo img {
   max-height: 55px;
 }
+
+// Global classes
+.btn-white {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.truncate-single {
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// User initial Avatar circle
+@mixin avatar($size) {
+  width: $size;
+  height: $size;
+  background-color: #26ace3;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+
+  .initials {
+    position: relative;
+    top: $size*0.25;
+    font-size: $size*0.5;
+    line-height: $size*0.5;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.avatar-circle-sm   { @include avatar(50px); }
+.avatar-circle      { @include avatar(100px); }
+
+.nav-user .avatar-circle  { @include avatar(50px); }
+
+@media (max-width: 767px) {
+  .nav-user .avatar-circle  { @include avatar(40px); }
+}
+
+// Specific Contact page
+
+#contact_timeline .frame button .timeline-badge {
+  font-size: 40px;
+  background-color: #fff;
+  border: none;
+  color: #26ace3;
+  line-height: 45px;
+  height: 45px;
+}
+
+button.timeline-event {
+  text-align: left;
+  white-space: normal;
+  background-color: #fff;
+
+  &:hover {
+    background-color: aliceblue;
+    .timeline-badge { background-color: aliceblue !important; }
+  }
+
+  &:visited, &:focus, &:active {
+    background-color: #fff;
+    .timeline-badge { background-color: #fff; }
+  }
+}

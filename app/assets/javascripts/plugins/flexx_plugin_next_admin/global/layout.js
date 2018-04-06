@@ -466,20 +466,20 @@ var Layout = {
 		});
 
 		// Sending Messages
-		$sendButton.on('click', function () {
-			var messageText = $sendMessageInput.val().trim();
-			if( messageText.length == 0 )
-				messageText = "Take an angled photo of your screen. All the cool kids do it.";
+		// $sendButton.on('click', function () {
+		// 	var messageText = $sendMessageInput.val().trim();
+		// 	if( messageText.length == 0 )
+		// 		messageText = "Take an angled photo of your screen. All the cool kids do it.";
 
-			var html = '<div class="message animate right">'+
-					'<div class="message-text">'+messageText+'</div>'+
-					'<img src="'+Pleasure.settings.paths.images+'/faces/tolga-ergin.jpg" class="user-picture" alt="">'+
-					'</div>';
-			$messages.append(html);
-			Layout.resetSendMessage();
-			$messages.scrollTop( $messages.prop('scrollHeight') );
+		// 	var html = '<div class="message animate right">'+
+		// 			'<div class="message-text">'+messageText+'</div>'+
+		// 			'<img src="'+Pleasure.settings.paths.images+'/faces/tolga-ergin.jpg" class="user-picture" alt="">'+
+		// 			'</div>';
+		// 	$messages.append(html);
+		// 	Layout.resetSendMessage();
+		// 	$messages.scrollTop( $messages.prop('scrollHeight') );
 
-		});
+		// });
 	},
 
 	parallaxHeader: function () {
