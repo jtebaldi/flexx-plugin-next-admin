@@ -1,3 +1,3 @@
-//= require ./global/global-vendors.js
-//= require ./global/pleasure.js
-//= require ./global/layout.js
+//= require ./core.min.js
+//= require ./app.js
+//= require ./script.js
