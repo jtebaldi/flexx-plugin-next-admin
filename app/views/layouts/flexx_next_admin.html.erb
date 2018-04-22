@@ -10,6 +10,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
 
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/next_admin', 'data-turbolinks-track' => true %>
+
     <!-- Styles -->
     <%= stylesheet_link_tag    'plugins/flexx_plugin_next_admin/main', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', media: 'all', 'data-turbolinks-track' => true %>
@@ -32,9 +34,9 @@
     <!-- Sidebar -->
     <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
       <header class="sidebar-header">
-        <a class="logo-icon" href="../index.html"><img src="assets/img/logo-icon-light.png" alt="logo icon"></a>
+
         <span class="logo">
-          <a href="../index.html"><img src="assets/img/logo-light.png" alt="logo"></a>
+
         </span>
         <span class="sidebar-toggle-fold"></span>
       </header>
@@ -242,7 +244,9 @@
     <!-- END Global quickview -->
 
     <!-- Scripts -->
-    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/main', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/core.min', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/vendors', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/app.min', 'data-turbolinks-track' => true %>
 
   </body>
 </html>
