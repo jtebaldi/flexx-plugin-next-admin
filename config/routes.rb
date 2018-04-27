@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       scope :admin, as: 'admin', path: PluginRoutes.system_info['admin_path_name'] do
         namespace :next do
           resources :contacts
+          resources :recipes
         end
 
         namespace 'plugins' do

@@ -1,0 +1,232 @@
+<style>
+  input[type=radio].hide-control { display: none; }
+</style>
+<script>
+  $('document').ready(function(){
+    $("#timing_detail").hide();
+    var rad = document.recipeTask.timingOptions;
+    $(rad).on('click change', function(e) {
+      if (rad.value == 2) {
+        $("#timing_detail").show();
+      } else {
+        $("#timing_detail").hide();
+      }
+    });
+  });
+</script>
+<header class="header">
+  <div class="header-bar header-inverse bg-info">
+    <p class="fs-16">Creating new recipe</p>
+  </div>
+
+  <div class="header-info">
+    <div class="left">
+      <h2 class="header-title"><strong>Some title</strong> recipe <small class="subtitle">Description of Recipe</small></h2>
+    </div>
+  </div>
+
+  <div class="header-action">
+    <div class="buttons">
+      <a class="btn btn-info btn-float btn-sm" href="#"><i class="ti-pencil"></i></a>
+      <a class="btn btn-danger btn-float btn-sm" href="#"><i class="ti-close"></i></a>
+    </div>
+  </div>
+</header>
+
+<div class="main-content">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="card">
+        <h4 class="card-title"><strong>Recipe</strong></h4>
+        <ol class="timeline timeline-activity timeline-point-sm timeline-content-right w-100 py-20 pr-20">
+          <li class="timeline-block">
+            <div class="timeline-point">
+              <a href="#qv-edit-task" data-toggle="quickview"><span class="badge badge-ring badge-primary"></span></a>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2018">Immediately</time>
+              <p>Add lead to <a href="#">mailing list</a></p>
+            </div>
+          </li>
+
+          <li class="timeline-block">
+            <div class="timeline-point">
+              <span class="badge badge-ring badge-info"></span>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2018">after 1 day</time>
+              <p>Call and schedule initial consult</p>
+            </div>
+          </li>
+
+        </ol>
+        <div class="card-footer text-center">
+          <h5>Add task</h5>
+          <div class="fab">
+            <button class="btn btn-float btn-primary"><i class="ti-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <form name="recipeTask" class="card form-type-combine">
+        <h4 class="card-title"><strong>New task</strong></h4>
+
+        <div class="card-body">
+          <div class="form-group">
+            <label for="select">Type</label>
+            <select class="form-control" id="task_type">
+              <option>Phone call</option>
+              <option>Email</option>
+              <option>Text</option>
+              <option>General</option>
+            </select>
+          </div>
+
+          <h6 class="text-light fw-300">Timing</h6>
+          <div class="no-border text-center">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-lg btn-info active">
+                <input class="hide-control" type="radio" name="timingOptions" id="option1" value="1" autocomplete="off" checked>Immediate</i>
+              </label>
+              <label class="btn btn-lg btn-info">
+                <input class="hide-control" type="radio" name="timingOptions" id="option2" value="2" autocomplete="off">Schedule</i>
+              </label>
+            </div>
+          </div>  
+
+          <div id="timing_detail" class="form-groups-attached">
+
+            <div class="row">
+              <div class="form-group col-6">
+                <label>After</label>
+                <input class="form-control" type="text" placeholder="1">
+              </div>
+
+              <div class="form-group col-6">
+                <label for="select">Time unit</label>
+                <select class="form-control" id="select">
+                  <option>minutes</option>
+                  <option>hours</option>
+                  <option>days</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <br>
+          <h6 class="text-light fw-300">Details</h6>
+          <div class="form-groups-attached">
+
+            <div class="form-group">
+              <label>Title for reference</label>
+              <input class="form-control" type="text">
+            </div>
+
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control" rows="6"></textarea>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <footer class="card-footer text-right">
+          <button class="btn btn-secondary" type="reset">Cancel</button>
+          <button class="btn btn-primary" type="submit">Add</button>
+        </footer>
+      </form>
+    </div>
+  
+  </div>
+</div> 
+
+
+<!-- QUICKVIEW - Edit task -->
+<div id="qv-edit-task" class="quickview quickview-lg">
+  <header class="quickview-header">
+    <p class="quickview-title lead">Edit: <strong>Task title</strong></p>
+    <span class="close"><i class="ti-close"></i></span>
+  </header>
+
+  <div class="quickview-body">
+    <form class="quickview-block form-type-combine">
+
+      <div class="card-body">
+        <div class="form-group">
+          <label for="select">Type</label>
+          <select class="form-control" id="task_type">
+            <option>Phone call</option>
+            <option>Email</option>
+            <option>Text</option>
+            <option>General</option>
+          </select>
+        </div>
+
+        <h6 class="text-light fw-300">Timing</h6>
+        <div class="no-border text-center">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-lg btn-info active" style="width: 100%;">
+              <input class="hide-control" type="radio" name="timingOptions" id="option1" value="1" autocomplete="off" checked>Immediate</i>
+            </label>
+            <label class="btn btn-lg btn-info" style="width: 100%;">
+              <input class="hide-control" type="radio" name="timingOptions" id="option2" value="2" autocomplete="off">Schedule</i>
+            </label>
+          </div>
+        </div>  
+
+        <div id="timing_detail" class="form-groups-attached">
+
+          <div class="row">
+            <div class="form-group col-6">
+              <label>After</label>
+              <input class="form-control" type="text" placeholder="1">
+            </div>
+
+            <div class="form-group col-6">
+              <label for="select">Time unit</label>
+              <select class="form-control" id="task_time_unit">
+                <option>minutes</option>
+                <option>hours</option>
+                <option>days</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <br>
+        <h6 class="text-light fw-300">Details</h6>
+        <div class="form-groups-attached">
+
+          <div class="form-group">
+            <label>Title for reference</label>
+            <input class="form-control" type="text">
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" rows="6"></textarea>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <footer class="card-footer text-right">
+        <button class="btn btn-secondary" type="reset">Cancel</button>
+        <button class="btn btn-primary" type="submit">Save</button>
+      </footer>
+    </form>
+  </div>
+
+  <footer class="quickview-footer flex-row-reverse">
+    <button class="btn btn-danger" type="submit">Delete task</button>
+  </footer>
+</div>
