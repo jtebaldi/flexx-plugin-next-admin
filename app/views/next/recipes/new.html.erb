@@ -4,7 +4,7 @@
 <script>
   $('document').ready(function(){
     $("#timing_detail").hide();
-    var rad = document.recipeTask.timingOptions;
+    var rad = document.recipeStep.timingOptions;
     $(rad).on('click change', function(e) {
       if (rad.value == 2) {
         $("#timing_detail").show();
@@ -12,10 +12,23 @@
         $("#timing_detail").hide();
       }
     });
+
+    var stepFormPlaceholder = $("#step_placeholder");
+    var stepForm = $("#new_step_form");
+    var addStepBtn = $("#btn_add_step");
+    stepForm.hide();
+    addStepBtn.addClass('btn-primary');
+    $(addStepBtn).on('click', function(e) {
+      stepFormPlaceholder.toggle();
+      stepForm.toggle();
+      addStepBtn.toggleClass('btn-primary btn-warning disabled');
+      $("#btn_add_step > i").toggleClass('ti-plus fa fa-ellipsis-h');
+    });
   });
 </script>
 <header class="header">
   <div class="header-bar header-inverse bg-info">
+    <a href="/admin/next/recipes" style="color: #fff;"><i class="ti-arrow-left"></i> Back to recipes list</a>
     <p class="fs-16">Creating new recipe</p>
   </div>
 
@@ -27,7 +40,7 @@
 
   <div class="header-action">
     <div class="buttons">
-      <a class="btn btn-info btn-float btn-sm" href="#"><i class="ti-pencil"></i></a>
+      <a class="btn btn-info btn-float btn-sm" href="#" title="Edit title or description" data-provide="tooltip" data-placement="top"><i class="ti-pencil"></i></a>
       <a class="btn btn-danger btn-float btn-sm" href="#"><i class="ti-close"></i></a>
     </div>
   </div>
@@ -40,44 +53,52 @@
       <div class="card">
         <h4 class="card-title"><strong>Recipe</strong></h4>
         <ol class="timeline timeline-activity timeline-point-sm timeline-content-right w-100 py-20 pr-20">
-          <li class="timeline-block">
-            <div class="timeline-point">
-              <a href="#qv-edit-task" data-toggle="quickview"><span class="badge badge-ring badge-primary"></span></a>
-            </div>
-            <div class="timeline-content">
-              <time datetime="2018">Immediately</time>
-              <p>Add lead to <a href="#">mailing list</a></p>
-            </div>
-          </li>
+          <a href="#qv-edit-step" data-toggle="quickview">
+            <li class="timeline-block">
+              <div class="timeline-point">
+                <span class="badge badge-ring badge-primary"></span>
+              </div>
+              <div class="timeline-content">
+                <time datetime="2018">Immediately</time>
+                <p>Add lead to mailing list</p>
+              </div>
+            </li>
+          </a>    
 
-          <li class="timeline-block">
-            <div class="timeline-point">
-              <span class="badge badge-ring badge-info"></span>
-            </div>
-            <div class="timeline-content">
-              <time datetime="2018">after 1 day</time>
-              <p>Call and schedule initial consult</p>
-            </div>
-          </li>
+          <a href="#qv-edit-step" data-toggle="quickview">
+            <li class="timeline-block">
+              <div class="timeline-point">
+                <span class="badge badge-ring badge-info"></span>
+              </div>
+              <div class="timeline-content">
+                <time datetime="2018">after 1 day</time>
+                <p>Call and schedule initial consult</p>
+              </div>
+            </li>
+          </a>
 
         </ol>
         <div class="card-footer text-center">
-          <h5>Add task</h5>
           <div class="fab">
-            <button class="btn btn-float btn-primary"><i class="ti-plus"></i></button>
+            <button id="btn_add_step" class="btn btn-float" title="Add new step" data-provide="tooltip" data-placement="top"><i class="ti-plus"></i></button>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-6">
-      <form name="recipeTask" class="card form-type-combine">
-        <h4 class="card-title"><strong>New task</strong></h4>
+      <div id="step_placeholder" class="card card-transparent">
+        <div class="card-body text-center">
+          <h3 class="text-muted">Add a new step</h3>
+        </div>
+      </div>
+      <form id="new_step_form" name="recipeStep" class="card form-type-combine">
+        <h4 class="card-title"><strong>New step</strong></h4>
 
         <div class="card-body">
           <div class="form-group">
             <label for="select">Type</label>
-            <select class="form-control" id="task_type">
+            <select class="form-control" id="step_type">
               <option>Phone call</option>
               <option>Email</option>
               <option>Text</option>
@@ -144,13 +165,48 @@
     </div>
   
   </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <h4 class="card-title"><strong>Associated</strong> forms</h4>
+
+        <div class="card-body form-type-combine">
+          <div class="row">
+
+
+            <div class="col-md-6">
+              <p>Use the list on the right to select forms</p>
+            </div>
+
+
+            <div class="col-md-6">
+              <hr class="d-md-none">
+
+              <div class="form-group">
+                <label for="select-multi">Available forms</label>
+                <select class="form-control" id="select-multi" multiple>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div> 
 
 
-<!-- QUICKVIEW - Edit task -->
-<div id="qv-edit-task" class="quickview quickview-lg">
+<!-- QUICKVIEW - Edit step -->
+<div id="qv-edit-step" class="quickview quickview-lg backdrop-dark">
   <header class="quickview-header">
-    <p class="quickview-title lead">Edit: <strong>Task title</strong></p>
+    <p class="quickview-title lead">Edit: <strong>Step title</strong></p>
     <span class="close"><i class="ti-close"></i></span>
   </header>
 
@@ -160,7 +216,7 @@
       <div class="card-body">
         <div class="form-group">
           <label for="select">Type</label>
-          <select class="form-control" id="task_type">
+          <select class="form-control" id="step_type">
             <option>Phone call</option>
             <option>Email</option>
             <option>Text</option>
@@ -190,7 +246,7 @@
 
             <div class="form-group col-6">
               <label for="select">Time unit</label>
-              <select class="form-control" id="task_time_unit">
+              <select class="form-control" id="step_time_unit">
                 <option>minutes</option>
                 <option>hours</option>
                 <option>days</option>
@@ -227,6 +283,6 @@
   </div>
 
   <footer class="quickview-footer flex-row-reverse">
-    <button class="btn btn-danger" type="submit">Delete task</button>
+    <button class="btn btn-danger" type="submit">Delete step</button>
   </footer>
 </div>

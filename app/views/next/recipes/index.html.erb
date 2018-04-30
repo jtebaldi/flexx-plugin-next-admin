@@ -1,0 +1,113 @@
+<header class="header">
+  <div class="header-info">
+    <h2 class="header-title">Your <strong>Recipes</strong></h2>
+  </div>
+  <div class="header-action">
+    <div class="buttons">
+      <a class="btn btn-primary btn-float" href="/admin/next/recipes/new"><i class="ti-plus"></i></a>
+    </div>
+  </div>
+</header>
+
+<div class="main-content">
+
+  <p class="lead text-center text-fade">Active recipes</p>
+  <div class="card b-1 hover-shadow-2 mb-20">
+    <a class="media card-body" href="#">
+
+      <div class="media-body">
+        <div class="mb-2">
+          <span class="fs-20 pr-16">Recipe Title</span>
+          <span class="badge badge-success text-uppercase no-radius ls-1 opacity-75">Full-time</span>
+        </div>
+        <small class="fs-16 fw-300 ls-1">Brief recipe description</small>
+      </div>
+
+      <div class="media-right text-right d-none d-md-block">
+        <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Menlo Park, CA</p>
+        <span class="text-fade fs-12">Total tasks: <strong>9</strong></span>
+      </div>
+    </a>
+    <footer class="card-footer flexbox align-items-center">
+      <div>
+        <strong>Created on:</strong>
+        <span>Jan 21, 2017</span>
+      </div>
+      <div class="card-hover-show">
+        <a class="btn btn-xs fs-10 btn-bold btn-info" href="#qv-recipe-overview" data-toggle="quickview">Quickview</a>
+        <a class="btn btn-xs fs-10 btn-bold btn-danger recipe-delete" href="#">Delete</a>
+      </div>
+    </footer>
+  </div>
+
+  <br>
+  <div class="divider text-uppercase fw-500">Drafts</div>
+
+  <div class="card b-1 hover-shadow-2 mb-20">
+    <div class="media card-body">
+
+      <div class="media-body">
+        <div class="mb-2">
+          <span class="fs-20 pr-16">Recipe title</span>
+        </div>
+        <small class="fs-16 fw-300 ls-1">The brief description of the recipe.</small>
+      </div>
+
+      <div class="media-right text-right d-none d-md-block">
+        <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Menlo Park, CA</p>
+        <span class="text-fade"><i class="fa fa-money pr-1"></i> $60 per hour</span>
+      </div>
+    </div>
+
+    <footer class="card-footer flexbox align-items-center">
+      <div>
+        <strong>Created on:</strong>
+        <span>Jan 21, 2017</span>
+      </div>
+      <div class="card-hover-show">
+        <a class="btn btn-xs fs-10 btn-bold btn-info" href="#qv-recipe-overview" data-toggle="quickview">Quickview</a>
+        <a class="btn btn-xs fs-10 btn-bold btn-danger recipe-delete" href="#">Delete</a>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="qv-recipe-overview" class="quickview quickview-lg backdrop-light">
+  <header class="quickview-header">
+    <p class="quickview-title lead"><strong>Recipe Title</strong></p>
+    <span class="close"><i class="ti-close"></i></span>
+  </header>
+
+  <div class="quickview-body">
+    <div class="quickview-block">
+      <ol class="timeline timeline-activity timeline-point-sm timeline-content-right w-100 py-20 pr-20">
+        <li class="timeline-block">
+          <div class="timeline-point">
+            <a href="#qv-edit-task" data-toggle="quickview"><span class="badge badge-ring badge-primary"></span></a>
+          </div>
+          <div class="timeline-content">
+            <time datetime="2018">Immediately</time>
+            <p>Add lead to <a href="#">mailing list</a></p>
+          </div>
+        </li>
+
+        <li class="timeline-block">
+          <div class="timeline-point">
+            <span class="badge badge-ring badge-info"></span>
+          </div>
+          <div class="timeline-content">
+            <time datetime="2018">after 1 day</time>
+            <p>Call and schedule initial consult</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+  <footer class="quickview-footer">
+    <button class="btn btn-primary">Edit</button>
+    <button class="btn btn-secondary" data-dismiss="quickview">Close</button>
+  </footer>
+</div>
