@@ -22,7 +22,7 @@
       stepFormPlaceholder.toggle();
       stepForm.toggle();
       addStepBtn.toggleClass('btn-primary btn-warning disabled');
-      $("#btn_add_step > i").toggleClass('ti-plus fa fa-ellipsis-h');
+      $("#btn_add_step > i").toggleClass('ti-plus ti-more');
     });
   });
 </script>
@@ -34,14 +34,14 @@
 
   <div class="header-info">
     <div class="left">
-      <h2 class="header-title"><strong>Some title</strong> recipe <small class="subtitle">Description of Recipe</small></h2>
+      <h2 class="header-title"><strong>Some title</strong> recipe <small class="subtitle">Description of Recipe (when clicking the edit button, need to add the "delete" button)</small></h2>
     </div>
   </div>
 
   <div class="header-action">
     <div class="buttons">
-      <a class="btn btn-info btn-float btn-sm" href="#" title="Edit title or description" data-provide="tooltip" data-placement="top"><i class="ti-pencil"></i></a>
-      <a class="btn btn-danger btn-float btn-sm" href="#"><i class="ti-close"></i></a>
+      <a class="btn btn-warning btn-float btn-sm" href="#" title="Edit title or description" data-provide="tooltip" data-placement="top"><i class="ti-pencil"></i></a>
+      <a class="btn btn-success btn-float" href="#" title="Edit title or description" data-provide="tooltip" data-placement="top"><i class="ti-control-play"></i></a>
     </div>
   </div>
 </header>
@@ -168,14 +168,14 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <h4 class="card-title"><strong>Associated</strong> forms</h4>
+        <h4 class="card-title"><strong>Associated forms</strong> (optional)</h4>
 
         <div class="card-body form-type-combine">
           <div class="row">
 
 
             <div class="col-md-6">
-              <p>Use the list on the right to select forms</p>
+              <p>Use the list on the right to select forms associated with the recipe. Anyone submitting through the form will automatically have the task list applied to their account.</p>
             </div>
 
 
@@ -183,14 +183,14 @@
               <hr class="d-md-none">
 
               <div class="form-group">
-                <label for="select-multi">Available forms</label>
-                <select class="form-control" id="select-multi" multiple>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <h5>Forms</h5>
+
+                <p>Add <code>multiple</code> froms</p>
+                <!-- <select data-provide="selectpicker" multiple>
+                  <option>Default contact</option>
+                  <option>Consultation</option>
+                  <option>Special event</option>
+                </select> -->
               </div>
             </div>
 

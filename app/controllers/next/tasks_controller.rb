@@ -1,4 +1,4 @@
-class Next::TaskssController < CamaleonCms::CamaleonController
+class Next::TasksController < CamaleonCms::CamaleonController
   layout "flexx_next_admin"
 
   def index

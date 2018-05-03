@@ -1,0 +1,401 @@
+<style>
+  input[type=radio].hide-control { display: none; }
+</style>
+<script>
+  $('document').ready(function(){
+    $("#timing_detail").hide();
+    var rad = document.createTask.timingOptions;
+    $(rad).on('click change', function(e) {
+      if (rad.value == 2) {
+        $("#timing_detail").show();
+      } else {
+        $("#timing_detail").hide();
+      }
+    });
+
+  });
+</script>
+<div class="main-content">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card no-margin">
+
+        <div class="card-body card-inverse text-center pb-50">
+          <a href="/admin/next/contacts/paulo">
+            <span class="avatar avatar-xxl avatar-bordered status-success">pc</span>
+          </a>
+          <h4 class="mt-2 mb-0"><a class="hover-primary text-white" href="#">Paulo Castro</a></h4>
+          <span>Prospect</span>
+        </div>
+        <ul class="flexbox flex-justified text-center p-20">
+          <li class="br-1 border-light">
+            <span class="text-muted">Email</span><br>
+            <span class="fs-22"><i class="fa fa-envelope"></i></span>
+          </li>
+          <li class="br-1 border-light">
+            <span class="text-muted">Call</span><br>
+            <span class="fs-22"><i class="fa fa-phone"></i></span>
+          </li>
+          <li>
+            <span class="text-muted">Text</span><br>
+            <span class="fs-22"><i class="fa fa-comment"></i></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="nav nav-lg nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#tab_tasks" data-toggle="tab">Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tab_contact_details" data-toggle="tab">User Details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-8 tab-content">
+      <div class="tab-pane fade active show" id="tab_tasks">
+        <p class="lead text-center text-fade">Upcoming tasks</p>
+        <div class="card b-1 hover-shadow-2 mb-20">
+          <a class="media card-body" data-toggle="quickview" href="#qv_view_task">
+            <div class="media-left pr-12">
+              <span class="avatar avatar-xl no-radius"><i class="fa fa-phone"></i></span>
+            </div>
+            <div class="media-body">
+              <div class="mb-2">
+                <span class="fs-20 pr-16">Task Title</span>
+              </div>
+              <small class="fs-16 fw-300 ls-1">Task details</small>
+            </div>
+
+            <div class="media-right text-right d-none d-md-block">
+              <p class="fs-14 text-fade mb-12">
+                <img class="avatar" src="http://codetic.net/demo/themes/privado/wp-content/themes/privado/img/avatar.png">
+              </p>
+              <span class="text-fade fs-12"><em>Note added</em></span>
+            </div>
+          </a>
+          <footer class="card-footer flexbox align-items-center">
+            <div>
+              <strong>Due by:</strong>
+              <span>May 21, 2018</span>
+            </div>
+            <div class="card-hover-show">
+              <button class="btn btn-xs fs-10 btn-bold btn-warning" data-toggle="modal" data-target="#modal-defer-task">Defer Task</button>
+            </div>
+          </footer>
+        </div>
+
+        <div class="text-center">
+          <a class="btn btn-w-md btn-multiline btn-primary" href="#qv-add-task" data-toggle="quickview"><i class="ti-layout-list-thumb fs-20"></i><br>Add task</a>
+        </div>
+
+        <br>
+        <div class="divider text-uppercase fw-500">Drafts</div>
+
+        <div class="card">
+          <h4 class="card-title"><strong>Advanced</strong></h4>
+
+          <ol class="timeline timeline-activity timeline-sm timeline-content-right w-100 py-20 pr-20">
+            <li class="timeline-block">
+              <div class="timeline-point">
+                <span class="avatar bg-info"><i class="fa fa-phone"></i></span>
+              </div>
+              <div class="timeline-content">
+                <time datetime="2018">Yesterday</time>
+                <p><span class="h6"><a href="#">Phone call</a></span> completed by <strong>Joe Tebaldi</strong></p>
+
+                <blockquote class="blockquote ml-0 my-2">
+                  <p class="fs-14">Notes about the outcome of the phone call</p>
+                </blockquote>
+
+                <hr>
+              </div>
+            </li>
+
+            <li class="timeline-block">
+              <div class="timeline-point">
+                <span class="avatar bg-warning"><i class="fa fa-envelope"></i></span>
+              </div>
+              <div class="timeline-content">
+                <time datetime="2018">April 20, 2018</time>
+                <p><span class="h6"><a href="#">Email</a></span> completed by <strong>Joe Tebaldi</strong></p>
+
+                <blockquote class="blockquote ml-0 my-2">
+                  <p class="fs-14">Preview of the email that was sent...</p>
+                </blockquote>
+
+                <div class="gap-items mt-2">
+                  <a class="btn btn-sm btn-outline btn-round btn-success" href="#">View Message</a>
+                </div>
+
+                <hr>
+              </div>
+            </li>
+          </ol>
+
+        </div>
+      </div>
+
+      <form class="card form-type-material tab-pane fade" id="tab_contact_details">
+        <h4 class="card-title fw-400">Contact Details</h4>
+
+        <div class="card-body">
+          <div class="flexbox gap-items-4">
+            <span class="avatar avatar-xl">pc</span>
+
+            <div class="flex-grow">
+              <h5>Paulo Castro</h5>
+              <div class="d-felx flex-column flex-sm-row gap-y gap-items-2 mt-16">
+                <div class="file-group file-group-inline">
+                  <button class="btn btn-sm btn-w-lg btn-outline btn-round btn-secondary file-browser" type="button">Change Picture</button>
+                  <input type="file">
+                </div>
+
+                <a class="btn btn-sm btn-w-lg btn-outline btn-round btn-danger align-top" href="#">Delete Picture</a>
+              </div>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>First name</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>Last name</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+              <input class="form-control" type="text">
+              <label>Email</label>
+            </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>Phone</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>Birthday</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>Address</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>Source</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text">
+                <label>Status</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="text">
+            <label>Tags</label>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" rows="6"></textarea>
+            <label>Highlights</label>
+          </div>
+        </div>
+
+        <footer class="card-footer text-right">
+          <button class="btn btn-flat btn-primary" type="submit">Save Changes</button>
+        </footer>
+      </form>
+
+    </div>
+
+
+  </div>
+</div>
+
+<!-- QUICKVIEW - View task -->
+<div id="qv_view_task" class="quickview quickview-lg backdrop-dark">
+  <header class="quickview-header">
+    <p class="quickview-title lead">Complete: <strong>Task title</strong></p>
+    <span class="close"><i class="ti-close"></i></span>
+  </header>
+
+  <div class="quickview-body">
+    <div class="card no-margin">
+
+      <div class="card-body card-inverse text-center pb-50">
+        <span class="avatar avatar-xxl avatar-bordered"><i class="fa fa-phone fs-30"></i></span>
+        <h4 class="mt-2 mb-0"><a class="hover-primary text-white" href="#">Paulo Castro</a></h4>
+        <span>Phone Call</span>
+      </div>
+      <ul class="flexbox flex-justified text-center p-20">
+        <li class="br-1 border-light">
+          <span class="text-muted">Date</span><br>
+          <span>05/01/2018</span>
+        </li>
+        <li>
+          <span class="text-muted">Time</span><br>
+          <span>3:00 PM EST</span>
+        </li>
+      </ul>
+      <form class="quickview-block form-type-combine">
+        <div class="form-group">
+          <label>Outcome / Notes</label>
+          <textarea class="form-control" rows="6"></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="quickview-footer flex-row-reverse">
+    <button class="btn btn-success" type="submit">Done</button>
+    <button class="btn btn-danger" type="reset">Cancel</button>
+    <button class="btn btn-warning" data-toggle="modal" data-target="#modal-defer-task">Defer Task</button>
+  </footer>
+</div>
+
+<!-- QUICKVIEW - Add task -->
+<div id="qv-add-task" class="quickview quickview-lg backdrop-dark">
+  <header class="quickview-header">
+    <p class="quickview-title lead">New <strong>Task</strong></p>
+    <span class="close"><i class="ti-close"></i></span>
+  </header>
+
+  <div class="quickview-body">
+    <form class="quickview-block form-type-combine" name="createTask">
+
+      <div class="card-body">
+        <div class="form-group">
+          <label for="select">Type</label>
+          <select class="form-control" id="step_type">
+            <option>Phone call</option>
+            <option>Email</option>
+            <option>Text</option>
+            <option>General</option>
+          </select>
+        </div>
+
+        <h6 class="text-light fw-300">Timing</h6>
+        <div class="no-border text-center">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-lg btn-info active" style="width: 100%;">
+              <input class="hide-control" type="radio" name="timingOptions" id="option1" value="1" autocomplete="off" checked>Immediate</i>
+            </label>
+            <label class="btn btn-lg btn-info" style="width: 100%;">
+              <input class="hide-control" type="radio" name="timingOptions" id="option2" value="2" autocomplete="off">Schedule</i>
+            </label>
+          </div>
+        </div>  
+
+        <div id="timing_detail" class="form-groups-attached">
+
+          <div class="row">
+            <div class="form-group col-6">
+              <label>After</label>
+              <input class="form-control" type="text" placeholder="1">
+            </div>
+
+            <div class="form-group col-6">
+              <label for="select">Time unit</label>
+              <select class="form-control" id="step_time_unit">
+                <option>minutes</option>
+                <option>hours</option>
+                <option>days</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <br>
+        <h6 class="text-light fw-300">Details</h6>
+        <div class="form-groups-attached">
+
+          <div class="form-group">
+            <label>Task title</label>
+            <input class="form-control" type="text">
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" rows="6"></textarea>
+          </div>
+
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+
+  <footer class="quickview-footer flex-row-reverse">
+    <button class="btn btn-success" type="submit">Add</button>
+    <button class="btn btn-danger" type="reset">Cancel</button>
+  </footer>
+</div>
+
+<!-- MODAL: Defer task -->
+<div class="modal modal-center fade" id="modal-defer-task" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Defer: Task title</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>Current due date</label>
+            <input type="text" class="form-control" value="04/12/2018" readonly="">
+          </div>
+          <div class="form-group">
+            <label>Defer until</label>
+            <input type="text" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-bold btn-pure btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

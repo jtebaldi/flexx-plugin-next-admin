@@ -1,73 +1,29 @@
-<header class="header bg-ui-general">
+<style>
+  @media (max-width: 576px) {
+    #contact_list .media-body h6 small { display: none; }
+    #contact_list .media-body h6 { font-size: 15px; }
+
+    .header .right { display: none; }
+  }
+</style>
+
+<header class="header">
   <div class="header-info">
-    <h1 class="header-title">
-      <strong>Contacts</strong>
-      <small>Subtitle for page.</small>
-    </h1>
-  </div>
-
-  <div class="header-action">
-    <nav class="nav">
-      <a class="nav-link active" href="userlist.html">List</a>
-      <!-- <a class="nav-link" href="userlist-grid.html">Grid</a> -->
-    </nav>
-  </div>
-</header><!--/.header -->
-
-<!-- Page aside 
-<aside class="aside aside-expand-md">
-  <div class="aside-body">
-
-    <div class="aside-block">
-      <div class="flexbox align-items-center mb-1">
-        <h6 class="aside-title fs-13">Groups</h6>
-        <a class="float-right text-lighter hover-success" href="#" data-provide="tooltip" data-title="Create New Group" data-toggle="modal" data-target="#modal-add-group"><i class="ti-plus"></i></a>
-      </div>
-
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="badge badge-ring badge-danger"></span>
-            <span>Admin</span>
-          </a>
-          <a class="nav-action hover-info" href="#" data-provide="tooltip" data-title="Edit"><span class="ti-pencil"></span></a>
-          <a class="nav-action hover-danger delete-group" href="#" data-provide="tooltip" data-title="Remove"><span class="ti-close"></span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="badge badge-ring badge-warning"></span>
-            <span>Publisher</span>
-          </a>
-          <a class="nav-action hover-info" href="#" data-provide="tooltip" data-title="Edit"><span class="ti-pencil"></span></a>
-          <a class="nav-action hover-danger delete-group" href="#" data-provide="tooltip" data-title="Remove"><span class="ti-close"></span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="badge badge-ring badge-info"></span>
-            <span>Moderator</span>
-          </a>
-          <a class="nav-action hover-info" href="#" data-provide="tooltip" data-title="Edit"><span class="ti-pencil"></span></a>
-          <a class="nav-action hover-danger delete-group" href="#" data-provide="tooltip" data-title="Remove"><span class="ti-close"></span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="badge badge-ring badge-purple"></span>
-            <span>Customer</span>
-          </a>
-          <a class="nav-action hover-info" href="#" data-provide="tooltip" data-title="Edit"><span class="ti-pencil"></span></a>
-          <a class="nav-action hover-danger delete-group" href="#" data-provide="tooltip" data-title="Remove"><span class="ti-close"></span></a>
-        </li>
-      </ul>
+    <div class="left">
+      <h2 class="header-title">Your <strong>Contacts</strong></h2>
     </div>
-
-
+    <div class="right gap-items-2">
+      <a class="btn btn-secondary btn-square btn-round" href="#" data-provide="tooltip" title="Import Contacts"><i class="ti-import"></i></a>
+      <a class="btn btn-secondary btn-square btn-round" href="#" data-provide="tooltip" title="Export Contacts"><i class="ti-export"></i></a>
+    </div>
   </div>
-
-  <button class="aside-toggler"></button>
-</aside> -->
+  <div class="header-action">
+    <div class="buttons">
+      
+      <button class="btn btn-primary btn-float" data-toggle="quickview" href="#qv_new_contact"><i class="ti-plus"></i></button>
+    </div>
+  </div>
+</header>
 
 <div class="main-content">
   <div class="card card-shadowed">
@@ -76,135 +32,71 @@
     </form>
   </div>
 
-  <div class="media-list media-list-divided media-list-hover" data-provide="selectall">
+  <div id="contact_list" class="media-list media-list-divided media-list-hover">
 
-    <header class="flexbox align-items-center media-list-header bg-transparent b-0 py-16 pl-20">
+    <header class="flexbox align-items-center media-list-header bg-transparent b-0 py-16">
       <div class="flexbox align-items-center">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input">
-          <label class="custom-control-label"></label>
-        </div>
-
+        
         <span class="divider-line mx-1"></span>
 
         <div class="dropdown">
-          <a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">Move to</a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Sort by</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#"><span class="badge badge-ring badge-danger mr-1"></span> Admin</a>
-            <a class="dropdown-item" href="#"><span class="badge badge-ring badge-warning mr-1"></span> Publisher</a>
-            <a class="dropdown-item" href="#"><span class="badge badge-ring badge-info mr-1"></span> Moderator</a>
-            <a class="dropdown-item" href="#"><span class="badge badge-ring badge-purple mr-1"></span> Customer</a>
+            <a class="dropdown-item" href="#">First Name</a>
+            <a class="dropdown-item" href="#">Last Name</a>
+            <a class="dropdown-item" href="#">Status</a>
+            <a class="dropdown-item" href="#">Newest</a>
+            <a class="dropdown-item" href="#">Oldest</a>
           </div>
         </div>
-
-        <div class="dropdown d-none d-sm-block">
-          <a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">Sort by</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Date</a>
-            <a class="dropdown-item" href="#">Name</a>
-            <a class="dropdown-item" href="#">Group</a>
-            <a class="dropdown-item" href="#">Popular</a>
-          </div>
-        </div>
-
       </div>
     </header>
 
 
     <div class="media-list-body bg-white b-1">
       <div class="media align-items-center">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input">
-          <label class="custom-control-label"></label>
-        </div>
 
-        <span class="badge badge-dot badge-danger"></span>
-
-        <a class="flexbox flex-grow gap-items text-truncate" href="#qv-user-details" data-toggle="quickview">
-          <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png" alt="...">
+        <a class="flexbox align-items-center flex-grow gap-items" href="#qv-user-details" data-toggle="quickview">
+          <span class="avatar avatar-lg status-success bg-dark">pc</span>
 
           <div class="media-body text-truncate">
-            <h6>
-              Maryam Amiri
-              <small class="sidetitle">Online</small>
-            </h6>
-            <small>
-              <span>maryam.amiri@gmail.com</span>
+            <h6>Paulo Castro <small><em>Added on 23 March 2017</em></small></h6>
+            <small class="contact-detail">
+              <span>Last contact: </span>
+              <time datetime="2018-07-14 20:00">Aug 17, 2017</time>
+              <span class="divider-dash"><span class="text-info">3 pending tasks</span></span>
             </small>
           </div>
         </a>
-
-        <div class="dropdown">
-          <a class="text-lighter" href="#" data-toggle="dropdown"><i class="ti-more-alt rotate-90"></i></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-phone"></i> Call</a>
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-commenting"></i> Message</a>
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-envelope"></i> Email</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-trash"></i> Delete</a>
-          </div>
+        
+        <div class="media-right gap-items">
+          <a class="media-action lead fs-26" href="/admin/next/contacts/paulo" data-provide="tooltip" title="" data-original-title="View Profile"><i class="ti-angle-double-right"></i></a>
         </div>
       </div>
 
-
-
       <div class="media align-items-center">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input">
-          <label class="custom-control-label"></label>
-        </div>
 
-        <span class="badge badge-dot badge-danger opacity-0"></span>
-
-        <a class="flexbox flex-grow gap-items text-truncate" href="#qv-user-details" data-toggle="quickview">
-          <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png" alt="...">
+        <a class="flexbox align-items-center flex-grow gap-items" href="#qv-user-details" data-toggle="quickview">
+          <img class="avatar avatar-lg" src="http://codetic.net/demo/themes/privado/wp-content/themes/privado/img/avatar.png" alt="...">
 
           <div class="media-body text-truncate">
-            <h6>Hossein Shams</h6>
-            <small>
-              <span>hossein.shams@yahoo.com</span>
-              <span class="divider-dash">(256) 875-6579</span>
+            <h6>Joe Tebaldi <small><em>Added on 23 March 2017</em></small></h6>
+            <small class="contact-detail">
+              <span>Last contact: </span>
+              <time datetime="2018-07-14 20:00">Aug 17, 2017</time>
             </small>
           </div>
         </a>
-
-        <div class="dropdown">
-          <a class="text-lighter" href="#" data-toggle="dropdown"><i class="ti-more-alt rotate-90"></i></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-phone"></i> Call</a>
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-commenting"></i> Message</a>
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-envelope"></i> Email</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fa fa-fw fa-trash"></i> Delete</a>
-          </div>
+        
+        <div class="media-right gap-items">
+          <a class="media-action lead fs-26" href="/admin/next/contacts/paulo" data-provide="tooltip" title="" data-original-title="View Profile"><i class="ti-angle-double-right"></i></a>
         </div>
       </div>
 
     </div>
 
-
-    <footer class="flexbox align-items-center py-20">
-      <span class="flex-grow text-right text-lighter pr-2">1-10 of 1,853</span>
-      <nav>
-        <a class="btn btn-sm btn-square disabled" href="#"><i class="ti-angle-left"></i></a>
-        <a class="btn btn-sm btn-square" href="#"><i class="ti-angle-right"></i></a>
-      </nav>
-    </footer>
-
   </div>
-</div>
 
-<div class="fab fab-fixed">
-  <button class="btn btn-float btn-danger" data-toggle="button">
-    <i class="fab-icon-default ti-arrow-up"></i>
-    <i class="fab-icon-active ti-close"></i>
-  </button>
-
-  <ul class="fab-buttons">
-    <li><a class="btn btn-float btn-sm btn-info" href="#qv-form" data-toggle="quickview"><i class="fa fa-user"></i></a></li>
-    <li><a class="btn btn-float btn-sm btn-info" href="#"><i class="fa fa-clipboard"></i></a></li>
-    <li><a class="btn btn-float btn-sm btn-info" href="#"><i class="fa fa-calendar"></i></a></li>    
-  </ul>
 </div>
 
 <!------------------------------------- MODALS ---------------------------------------->
@@ -279,97 +171,95 @@
 </div>
 
 
-<!-- Quickview - User detail -->
-<div id="qv-user-details" class="quickview quickview-lg">
+<!-- QUICKVIEW - User detail -->
+<div id="qv-user-details" class="quickview">
   <div class="quickview-body">
 
-    <div class="card card-inverse bg-img" style="background-image: url(../assets/img/gallery/thumb/2.jpg);">
-      <div class="flexbox px-20 pt-20">
-        <label class="toggler text-white">
-          <input type="checkbox">
-          <i class="fa fa-star"></i>
-        </label>
-
-        <a class="text-white fs-20 lh-1" href="#"><i class="fa fa-trash"></i></a>
-      </div>
+    <div class="card card-inverse">
 
       <div class="card-body text-center pb-50">
-        <a href="#">
-          <img class="avatar avatar-xxl avatar-bordered" src="../assets/img/avatar/1.jpg">
+        <a href="/admin/next/contacts/paulo">
+          <span class="avatar avatar-xxl avatar-bordered status-success">pc</span>
         </a>
-        <h4 class="mt-2 mb-0"><a class="hover-primary text-white" href="#">Maryam Amiri</a></h4>
-        <span><i class="fa fa-map-marker w-20px"></i> San Fransisco</span>
+        <h4 class="mt-2 mb-0"><a class="hover-primary text-white" href="#">Paulo Castro</a></h4>
+        <span>Prospect</span>
       </div>
     </div>
 
-    <div class="quickview-block form-type-material">
-      <div class="form-group">
-        <input type="text" class="form-control" value="Maryame Amiri">
-        <label>Name</label>
-      </div>
+    <div class="quickview-block">
+      
+      <div class="media-grid media-grid-bordered media-grid-hover row">
+        <a href="#" class="media w-100 ml-15">
+          <span class="fa fa-envelope fa-2x lead text-info"></span>
+          <div class="media-body">
+            <p><strong>paulo@flexx.co</strong></p>
+            <p>Email</p>
+          </div>
+        </a>
 
-      <div class="form-group">
-        <input type="text" class="form-control" value="maryam.amiri@gmail.com">
-        <label>Email Address</label>
-      </div>
+        <a href="#" class="media w-100 ml-15">
+          <span class="fa fa-phone fa-2x lead text-info"></span>
+          <div class="media-body">
+            <p><strong>(650) 555 - 1234</strong></p>
+            <p>Call</p>
+          </div>
+        </a>
 
-      <div class="form-group">
-        <input type="text" class="form-control" value="(123) 456-7890">
-        <label>Phone Number</label>
-      </div>
+        <a href="#" class="media w-100 ml-15">
+          <span class="fa fa-comment fa-2x lead text-info"></span>
+          <div class="media-body">
+            <p><strong>(650) 555 - 1234</strong></p>
+            <p>Text</p>
+          </div>
+        </a>
 
-      <div class="form-group">
-        <input type="text" class="form-control" value="thetheme.io">
-        <label>Website</label>
-      </div>
+        <a href="#" class="media w-100 ml-15">
+          <span class="fa fa-list-alt fa-2x lead text-info"></span>
+          <div class="media-body">
+            <p><strong>Add Task</strong></p>
+          </div>
+        </a>
 
-      <div class="form-group">
-        <input type="text" class="form-control" value="San Fransisco">
-        <label>Location</label>
       </div>
     </div>
   </div>
 
   <footer class="p-12 text-right">
-    <button class="btn btn-flat btn-secondary" type="button" data-toggle="quickview">Cancel</button>
-    <button class="btn btn-flat btn-primary" type="submit">Save changes</button>
+    <button class="btn btn-flat btn-secondary" type="button" data-toggle="quickview">Close</button>
+    <a class="btn btn-flat btn-primary" href="/admin/next/contacts/paulo">View profile <i class="ti-arrow-right"></i></a>
   </footer>
 </div>
 
-<!-- New User Form -->
-<div id="qv-form" class="quickview quickview-lg">
+<!-- QUICKVIEW: New Contact Form -->
+<div id="qv_new_contact" class="quickview quickview-lg">
   <header class="quickview-header">
     <p class="quickview-title lead">New Contact</p>
     <span class="close"><i class="ti-close"></i></span>
   </header>
 
   <div class="quickview-body">
-    <form class="quickview-block form-type-line">
 
-      <br>
+    <div class="quickview-block form-type-material">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder=First "Name">
-      </div>
-
-      <div class="form-group">
-        <input class="form-control" type="text" placeholder="Last Name">
+        <input type="text" class="form-control">
+        <label>First Name</label>
       </div>
 
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Email">
+        <input type="text" class="form-control">
+        <label>Last Name</label>
       </div>
 
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Phone Number">
-      </div>
-      <br>
-
-      <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input">
-        <label class="custom-control-label">I agree to <a class="text-primary" href="#">terms and conditions</a>.</label>
+        <input type="text" class="form-control">
+        <label>Email Address</label>
       </div>
 
-    </form>
+      <div class="form-group">
+        <input type="text" class="form-control">
+        <label>Phone Number</label>
+      </div>
+    </div>
   </div>
 
   <footer class="quickview-footer flex-row-reverse">

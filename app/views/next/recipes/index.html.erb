@@ -4,7 +4,7 @@
   </div>
   <div class="header-action">
     <div class="buttons">
-      <a class="btn btn-primary btn-float" href="/admin/next/recipes/new"><i class="ti-plus"></i></a>
+      <button class="btn btn-primary btn-float" data-toggle="modal" data-target="#modal_new_recipe"><i class="ti-plus"></i></button>
     </div>
   </div>
 </header>
@@ -13,18 +13,19 @@
 
   <p class="lead text-center text-fade">Active recipes</p>
   <div class="card b-1 hover-shadow-2 mb-20">
-    <a class="media card-body" href="#">
+    <a class="media card-body" href="/admin/next/recipes/new">
 
       <div class="media-body">
         <div class="mb-2">
           <span class="fs-20 pr-16">Recipe Title</span>
-          <span class="badge badge-success text-uppercase no-radius ls-1 opacity-75">Full-time</span>
         </div>
         <small class="fs-16 fw-300 ls-1">Brief recipe description</small>
       </div>
 
       <div class="media-right text-right d-none d-md-block">
-        <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Menlo Park, CA</p>
+        <p class="fs-14 text-fade mb-12">
+          <span class="badge badge-success text-uppercase no-radius ls-1 opacity-75">Consult Form</span>
+        </p>
         <span class="text-fade fs-12">Total tasks: <strong>9</strong></span>
       </div>
     </a>
@@ -54,8 +55,7 @@
       </div>
 
       <div class="media-right text-right d-none d-md-block">
-        <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Menlo Park, CA</p>
-        <span class="text-fade"><i class="fa fa-money pr-1"></i> $60 per hour</span>
+        <span class="text-fade fs-12">Total tasks: <strong>3</strong></span>
       </div>
     </div>
 
@@ -110,4 +110,46 @@
     <button class="btn btn-primary">Edit</button>
     <button class="btn btn-secondary" data-dismiss="quickview">Close</button>
   </footer>
+</div>
+
+<!-- MODAL: New recipe modal -->
+<div class="modal modal-top fade" id="modal_new_recipe" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New recipe</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="card form-type-combine">
+
+          <div class="card-body">
+
+            <div class="form-groups-attached">
+
+              <div class="form-group">
+                <label>Recipe Name</label>
+                <input class="form-control" type="text">
+              </div>
+
+              <div class="form-group">
+                <label for="textarea">Recipe description</label>
+                <textarea class="form-control" id="textarea" rows="6"></textarea>
+              </div>
+
+            </div>
+          </div>
+        </form>
+        <div class="text-center">
+          <p>(You can update this later)</p>
+        </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Cancel</button>
+        <a href="/admin/next/recipes/new" class="btn btn-bold btn-pure btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
 </div>
