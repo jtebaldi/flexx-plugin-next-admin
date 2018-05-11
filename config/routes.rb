@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         namespace :next do
           resources :recipes
           resources :tasks
+          resources :campaigns
         end
 
         namespace 'plugins' do

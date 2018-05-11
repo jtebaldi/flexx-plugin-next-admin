@@ -50,9 +50,16 @@
             <a class="nav-link active" href="#tab_tasks" data-toggle="tab">Tasks</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#tab_recipes_campaigns" data-toggle="tab">Campaigns & Recipes</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#tab_contact_details" data-toggle="tab">User Details</a>
           </li>
         </ul>
+      </div>
+
+      <div class="text-center">
+        <a class="btn btn-block btn-multiline btn-primary" href="#qv-add-task" data-toggle="quickview"><i class="ti-layout-list-thumb fs-20"></i><br>Add task</a>
       </div>
     </div>
 
@@ -89,15 +96,21 @@
           </footer>
         </div>
 
-        <div class="text-center">
-          <a class="btn btn-w-md btn-multiline btn-primary" href="#qv-add-task" data-toggle="quickview"><i class="ti-layout-list-thumb fs-20"></i><br>Add task</a>
-        </div>
-
         <br>
-        <div class="divider text-uppercase fw-500">Drafts</div>
+        <div class="divider text-uppercase fw-500">Timeline</div>
 
         <div class="card">
-          <h4 class="card-title"><strong>Advanced</strong></h4>
+          <header class="card-header">
+            <h4 class="card-title"><strong>History</strong></h4>
+            <div class="card-header-actions">
+              <label class="switch switch-border switch-info">
+                <input type="checkbox">
+                <span class="switch-indicator"></span>
+                <span class="switch-description">Include automated</span>
+              </label>
+              <button class="btn btn-sm btn-primary">View</button>
+            </div>
+          </header>
 
           <ol class="timeline timeline-activity timeline-sm timeline-content-right w-100 py-20 pr-20">
             <li class="timeline-block">
@@ -138,6 +151,92 @@
           </ol>
 
         </div>
+      </div>
+
+      <div class="tab-pane fade" id="tab_recipes_campaigns">
+        
+        <div class="card">
+          <h5 class="card-title">Active <strong>Campaigns</strong></h5>
+
+          <div class="media-list media-list-hover media-list-divided">
+            <div class="media align-items-center">
+              <div class="media-body">
+                <p><strong>Campaign title 1</strong></p>
+                <p>This is the most popular campaign</p>
+              </div>
+              <div>
+                <a class="btn btn-sm btn-twitter" href="#">Added</a>
+              </div>
+            </div>
+
+            <div class="media align-items-center">
+              <div class="media-body">
+                <p><strong>Campaign title 2</strong></p>
+                <p>This is the second most popular campaign</p>
+              </div>
+              <div>
+                <a class="btn btn-sm btn-twitter btn-outline" href="#">Add to list</a>
+              </div>
+            </div>
+
+            <div class="media align-items-center">
+              <div class="media-body">
+                <p><strong>Campaign title 3</strong></p>
+                <p>This is the third most popular campaign</p>
+              </div>
+              <div>
+                <a class="btn btn-sm btn-twitter btn-outline" href="#">Add to list</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-center bt-1 border-light p-2">
+            <a class="text-uppercase d-block fs-10 fw-500 ls-1" href="#">See all campaigns</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h5 class="card-title">Available <strong>Recipes</strong></h5>
+
+          <div class="media-list media-list-hover media-list-divided">
+            <div class="media align-items-center">
+              <div class="media-body">
+                <p><strong>Recipe title 1</strong></p>
+                <p>This is the most often used recipe</p>
+              </div>
+              <div>
+                <a class="btn btn-sm btn-twitter btn-outline" href="#">Add tasks</a>
+              </div>
+            </div>
+
+            <div class="media align-items-center">
+              <div class="media-body">
+                <p><strong>Recipe title 2</strong></p>
+                <p>This is the second most often used recipe</p>
+              </div>
+              <div>
+                <a class="btn btn-sm btn-twitter btn-outline" href="#">Add tasks</a>
+              </div>
+            </div>
+
+            <div class="media align-items-center">
+              <div class="media-body">
+                <p><strong>Recipe title 3</strong></p>
+                <p>This is the third most often used recipe</p>
+              </div>
+              <div>
+                <a class="btn btn-sm btn-twitter btn-outline" href="#">Add tasks</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-center bt-1 border-light p-2">
+            <a class="text-uppercase d-block fs-10 fw-500 ls-1" href="#">See all recipes</a>
+          </div>
+        </div>
+
       </div>
 
       <form class="card form-type-material tab-pane fade" id="tab_contact_details">

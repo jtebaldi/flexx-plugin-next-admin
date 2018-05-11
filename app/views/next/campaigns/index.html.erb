@@ -1,0 +1,138 @@
+<header class="header">
+  <div class="header-info">
+    <h2 class="header-title">Your <strong>Campaigns</strong></h2>
+  </div>
+  <div class="header-action">
+    <div class="buttons">
+      <button class="btn btn-primary btn-float" data-toggle="modal" data-target="#modal_new_campaign"><i class="ti-plus"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="main-content">
+
+  <p class="lead text-center text-fade">Active campaigns</p>
+  <div class="card b-1 hover-shadow-2 mb-20">
+    <a class="media card-body" href="/admin/next/campaigns/new">
+
+      <div class="media-body">
+        <div class="mb-2">
+          <span class="fs-20 pr-16">Campaign Title</span>
+        </div>
+        <small class="fs-16 fw-300 ls-1">Brief campaign description</small>
+      </div>
+
+      <div class="media-right text-right d-none d-md-block">
+        <p class="fs-14 text-fade mb-12">
+          <span class="text-fade fs-12">Active participants: <strong>15</strong></span>
+        </p>
+      </div>
+    </a>
+    <footer class="card-footer flexbox align-items-center">
+      <div>
+        <strong>Created on:</strong>
+        <span>Jan 21, 2017</span>
+      </div>
+      <div class="card-hover-show">
+        <a class="btn btn-xs fs-10 btn-bold btn-info" href="#qv-stats-overview" data-toggle="quickview">Stats</a>
+        <a class="btn btn-xs fs-10 btn-bold btn-danger recipe-delete" href="#">Delete</a>
+      </div>
+    </footer>
+  </div>
+
+  <br>
+  <div class="divider text-uppercase fw-500">Drafts</div>
+
+</div>
+
+<div id="qv-stats-overview" class="quickview quickview-lg backdrop-light">
+  <header class="quickview-header">
+    <p class="quickview-title lead"><strong>Campaign Title</strong></p>
+    <span class="close"><i class="ti-close"></i></span>
+  </header>
+
+  <div class="quickview-body">
+    <div class="quickview-block">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title"><strong>Emails</strong></h5>
+        </div>
+
+        <div class="card-body">
+          <div class="flexbox flex-justified text-center">
+            <ul class="list-unstyled">
+              <li><small class="text-uppercase letter-spacing-1">Sent</small></li>
+              <li><span class="badge badge-lg badge-ring badge-primary"></span></li>
+              <li class="lead">250</li>
+            </ul>
+
+            <ul class="list-unstyled">
+              <li><small class="text-uppercase letter-spacing-1">Opened</small></li>
+              <li><span class="badge badge-lg badge-ring badge-info"></span></li>
+              <li class="lead">120</li>
+            </ul>
+
+            <ul class="list-unstyled">
+              <li><small class="text-uppercase letter-spacing-1">Bounced</small></li>
+              <li><span class="badge badge-lg badge-ring badge-danger"></span></li>
+              <li class="lead">50</li>
+            </ul>
+          </div>
+
+          <br><br>
+
+          <div class="text-center">
+            <!-- <span data-provide="peity" data-type="donut" data-fill="#33cabb,#48b0f7,#f96868" data-size="150" data-inner-radius="68">250,120,50</span> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="quickview-footer">
+    <button class="btn btn-secondary" data-dismiss="quickview">Close</button>
+  </footer>
+</div>
+
+<!-- MODAL: New campaign modal -->
+<div class="modal modal-top fade" id="modal_new_campaign" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New campaign</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="card form-type-combine">
+
+          <div class="card-body">
+
+            <div class="form-groups-attached">
+
+              <div class="form-group">
+                <label>Campaign Name</label>
+                <input class="form-control" type="text">
+              </div>
+
+              <div class="form-group">
+                <label for="textarea">Campaign description</label>
+                <textarea class="form-control" id="textarea" rows="6"></textarea>
+              </div>
+
+            </div>
+          </div>
+        </form>
+        <div class="text-center">
+          <p>(You can update this later)</p>
+        </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Cancel</button>
+        <a href="/admin/next/campaigns/new" class="btn btn-bold btn-pure btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
