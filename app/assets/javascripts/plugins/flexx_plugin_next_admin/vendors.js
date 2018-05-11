@@ -1,1 +1,1 @@
-//= require ./vendors/.
+//= require_tree ./vendors/.
