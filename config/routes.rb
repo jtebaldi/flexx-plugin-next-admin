@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       #Admin Panel
       scope :admin, as: 'admin', path: PluginRoutes.system_info['admin_path_name'] do
         namespace :next do
+          resources :contacts
           resources :recipes
           resources :tasks
           resources :campaigns
