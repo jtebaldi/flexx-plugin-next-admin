@@ -38,7 +38,7 @@
 
     <!-- Main container -->
     <main class="main-container">
-    
+
       <%= yield %>
 
       <!-- FAB -->
@@ -61,6 +61,7 @@
     <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/core.min', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/vendors', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/app', 'data-turbolinks-track' => true %>
+    <%= yield :js %>
 
   </body>
 </html>
