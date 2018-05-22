@@ -16,6 +16,10 @@ Rails.application.routes.draw do
           resources :recipes
           resources :tasks
           resources :campaigns
+          resources :dashboard
+          get "/settings" => "dashboard#settings"
+          get "/crm" => "dashboard#crm"
+          get "/media" => "dashboard#media"
         end
 
         namespace 'plugins' do
