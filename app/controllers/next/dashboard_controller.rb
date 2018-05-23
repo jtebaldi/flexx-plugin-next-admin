@@ -15,4 +15,7 @@ class Next::DashboardController < CamaleonCms::CamaleonController
 
   def actions
   end
+
+  def gyms
+  end
 end
