@@ -13,4 +13,6 @@ class Next::DashboardController < CamaleonCms::CamaleonController
   def media
   end
 
+  def actions
+  end
 end
