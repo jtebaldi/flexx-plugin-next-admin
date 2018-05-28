@@ -2,6 +2,7 @@ class Next::DashboardController < CamaleonCms::CamaleonController
   layout "flexx_next_admin"
 
   def index
+    @active_contacts = current_site.contacts.active
   end
 
   def settings
@@ -13,4 +14,9 @@ class Next::DashboardController < CamaleonCms::CamaleonController
   def media
   end
 
+  def actions
+  end
+
+  def gyms
+  end
 end

@@ -1,0 +1,34 @@
+// GLOBAL
+
+$lead-color-primary: #fd7e14;
+$prospect-color-primary: #48b0f7;
+$customer-color-primary: #28a745;
+
+.text-lead { color: $lead-color-primary !important; }
+.text-prospect { color: $prospect-color-primary !important; }
+.text-customer { color: $customer-color-primary !important; }
+
+.avatar.status-lead::after { background-color: $lead-color-primary; }
+.avatar.status-prospect::after { background-color: $prospect-color-primary; }
+.avatar.status-customer::after { background-color: $customer-color-primary; }
+
+.btn-lead, .btn-prospect, .btn-customer { color: #fff; }
+.btn-lead { background-color: $lead-color-primary; border-color: $lead-color-primary; }
+.btn-prospect { background-color: $prospect-color-primary; border-color: $prospect-color-primary; }
+.btn-customer { background-color: $customer-color-primary; border-color: $customer-color-primary; }
+
+.btn-lead:hover, .btn-prospect:hover, .btn-customer:hover { color: #fff; }
+.btn-lead:hover { background-color: lighten($lead-color-primary, 10%); border-color: lighten($lead-color-primary, 10%); }
+.btn-prospect:hover { background-color: lighten($prospect-color-primary, 10%); border-color: lighten($prospect-color-primary, 10%); }
+.btn-customer:hover { background-color: lighten($customer-color-primary, 10%); border-color: lighten($customer-color-primary, 10%); }
+
+// CONTACTS - CRM Index
+@media (max-width: 576px) {
+  #contact_list .media-body h6 small { display: none; }
+  #contact_list .media-body h6 { font-size: 15px; }
+
+  .header .right { display: none; }
+}
+
+.bootstrap-tagsinput { display: block; }
+
