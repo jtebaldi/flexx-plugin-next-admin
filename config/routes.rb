@@ -21,6 +21,7 @@ Rails.application.routes.draw do
           get "/media" => "dashboard#media"
           get "/actions" => "dashboard#actions"
           get "/gyms" => "dashboard#gyms"
+          get "/website" => "dashboard#website"
         end
 
         namespace 'plugins' do
