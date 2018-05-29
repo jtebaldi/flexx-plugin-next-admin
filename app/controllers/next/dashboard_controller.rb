@@ -19,4 +19,7 @@ class Next::DashboardController < CamaleonCms::CamaleonController
 
   def gyms
   end
+
+  def website
+  end
 end
