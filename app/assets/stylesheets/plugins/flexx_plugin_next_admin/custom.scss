@@ -22,6 +22,16 @@ $customer-color-primary: #28a745;
 .btn-prospect:hover { background-color: lighten($prospect-color-primary, 10%); border-color: lighten($prospect-color-primary, 10%); }
 .btn-customer:hover { background-color: lighten($customer-color-primary, 10%); border-color: lighten($customer-color-primary, 10%); }
 
+.topbar-mobile.logo { display: none; }
+
+@media (max-width: 690px) {
+  .topbar-mobile.logo { display: block; }
+}
+
+.header-bar.bg-info { 
+  h1, h2, h3, h4, h5, a, li, span { color: #fff !important; }
+}
+
 // CONTACTS - CRM Index
 @media (max-width: 576px) {
   #contact_list .media-body h6 small { display: none; }
