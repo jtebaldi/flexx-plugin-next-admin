@@ -1,0 +1,363 @@
+<script>
+  $('document').ready(function(){
+    $("#timing_detail").hide();
+    var rad = document.newTextBlast.timingOptions;
+    $(rad).on('click change', function(e) {
+      if (rad.value == 2) {
+        $("#timing_detail").show();
+        $("#btn_send_text").text('Schedule Message');
+      } else {
+        $("#timing_detail").hide();
+        $("#btn_send_text").text('Send Message');
+      }
+    });
+
+    $("#timing_detail2").hide();
+    var rad2 = document.newEmailBlast.timingOptions2;
+    $(rad2).on('click change', function(e) {
+      if (rad2.value == 2) {
+        $("#timing_detail2").show();
+        $("#btn_send_email").text('Schedule Message');
+      } else {
+        $("#timing_detail2").hide();
+        $("#btn_send_email").text('Send Message');
+      }
+    });
+
+  });
+</script>
+<style>
+  input[type=radio].hide-control { display: none; }
+</style>
+
+<!-- ASIDE: Messaging - Email Thread / Text Toggle -->
+<aside class="aside aside-lg aside-expand-lg">
+
+<!--
+  <ul class="nav nav-tabs nav-justified nav-tabs-info">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#tab-email">Email</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#tab-text">Text</a>
+    </li>
+  </ul>
+-->
+  <div class="aside-body p-0">
+
+    <div class="tab-content">
+      <div class="tab-pane fade active show" id="tab-email">
+
+      </div>
+
+      <div class="tab-pane fade" id="tab-text">
+        <div class="media-list media-list-divided media-list-hover">
+
+          <header class="media-list-header b-0">
+            <form class="lookup lookup-lg w-100 bb-1 border-light">
+              <input class="w-100 no-radius no-border py-30" type="text" placeholder="Search..." data-provide="media-search">
+            </form>
+          </header>
+
+          <div class="media-list-body">
+            <a class="media align-items-center active" href="#">
+              <span class="avatar avatar-sm bg-secondary">MA</span>
+              <div class="media-body">
+                <div class="flexbox align-items-center">
+                  <strong class="title">Maryam Amiri</strong>
+                  <time datetime="2018-07-14 20:00">24 min ago</time>
+                  <span class="badge badge-pill badge-primary">3</span>
+                </div>
+                <p class="text-truncate">You need to update the changelog in documentation before we release the current version.</p>
+              </div>
+            </a>
+
+
+            <a class="media align-items-center" href="#">
+              <span class="avatar avatar-sm bg-secondary">PJ</span>
+              <div class="media-body">
+                <div class="flexbox align-items-center">
+                  <strong class="title">Patric Johnson</strong>
+                  <time datetime="2018-07-14 20:00">09:34</time>
+                  <span class="badge badge-pill badge-primary">1</span>
+                </div>
+                <p class="text-truncate">Ok, I'll take care of it</p>
+              </div>
+            </a>
+
+
+            <a class="media align-items-center" href="#">
+              <span class="avatar avatar-sm bg-secondary">SC</span>
+              <div class="media-body">
+                <div class="flexbox align-items-center">
+                  <strong class="title">Sarah Conner</strong>
+                  <time datetime="2018-07-14 20:00">04:29</time>
+                </div>
+                <p class="text-truncate">Good Morning!</p>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="aside-toggler"></button>
+</aside>
+<!-- END ASIDE: Messaging -->
+
+<header class="header">
+  <div class="header-info">
+    <div class="left">
+      <h2 class="header-title"><strong>Message Center</strong></h2>
+    </div>
+  </div>
+
+  <div class="header-action">
+    <nav class="nav">
+      <a class="nav-link active" data-toggle="tab" href="#tab-email">Email</a>
+      <a class="nav-link" data-toggle="tab" href="#tab-text">Text Message</a>
+    </nav>
+  </div>
+</header>
+
+<div class="main-content">
+  <div class="tab-content">
+
+    <div class="tab-pane fade active show" id="tab-send-email">
+      <form name="newEmailBlast" class="card form-type-combine">
+        <h4 class="card-title">New <strong>email blast</strong></h4>
+
+        <div class="card-body">
+          <div class="no-border text-center">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-lg btn-info active">
+                <input class="hide-control" type="radio" name="timingOptions2" id="option1" value="1" autocomplete="off" checked>Immediate</i>
+              </label>
+              <label class="btn btn-lg btn-info">
+                <input class="hide-control" type="radio" name="timingOptions2" id="option2" value="2" autocomplete="off">Schedule</i>
+              </label>
+            </div>
+          </div>
+
+          <div id="timing_detail2" class="form-groups-attached">
+            <div class="row">
+              <div class="form-group col-6">
+                <label>Date</label>
+                <input class="form-control" type="text" data-provide="datepicker">
+              </div>
+
+              <div class="form-group col-6">
+                <label for="select">Time</label>
+                <input class="form-control" type="text" data-provide="timepicker">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-groups-attached">
+
+            <div class="form-group">
+              <label>To</label>
+              <input class="form-control" type="text">
+            </div>
+
+            <div class="form-group">
+              <label>Subject</label>
+              <input class="form-control" type="text">
+            </div>
+
+            <div class="form-group">
+              <label>From</label>
+              <select class="form-control" data-provide="selectpicker">
+                <option>OPEX Flexx &lt;info@opexflexx.com&gt;</option>
+                <option>Joe Tebaldi &lt;joe@opexflexx.com&gt;</option>
+                <option>Staff Member &lt;staff@opexflexx.com&gt;</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea class="form-control" rows="6"></textarea>
+            </div>
+
+          </div>
+          <div class="flexbox pull-right">
+            <button id="btn_send_email" class="btn btn-bold btn-round btn-w-xl btn-primary">Send Message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="tab-pane fade" id="tab-send-text">
+      <form name="newTextBlast" class="card form-type-combine">
+        <h4 class="card-title">New <strong>text blast</strong></h4>
+
+        <div class="card-body">
+          <div class="no-border text-center">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-lg btn-info active">
+                <input class="hide-control" type="radio" name="timingOptions" id="option1" value="1" autocomplete="off" checked>Immediate</i>
+              </label>
+              <label class="btn btn-lg btn-info">
+                <input class="hide-control" type="radio" name="timingOptions" id="option2" value="2" autocomplete="off">Schedule</i>
+              </label>
+            </div>
+          </div>
+
+          <div id="timing_detail" class="form-groups-attached">
+            <div class="row">
+              <div class="form-group col-6">
+                <label>Date</label>
+                <input class="form-control" type="text" data-provide="datepicker">
+              </div>
+
+              <div class="form-group col-6">
+                <label for="select">Time</label>
+                <input class="form-control" type="text" data-provide="timepicker">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-groups-attached">
+
+            <div class="form-group">
+              <label>To</label>
+              <input class="form-control" type="text">
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea class="form-control" rows="6"></textarea>
+            </div>
+
+          </div>
+          <div class="flexbox pull-right">
+            <button id="btn_send_text" class="btn btn-bold btn-round btn-w-xl btn-primary">Send Message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- ASIDE: Actions 
+<aside class="aside aside-lg aside-expand-md">
+
+  <ul class="nav nav-tabs nav-justified nav-tabs-info">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#tab-contacts">Contacts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#tab-groups">Groups</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#tab-tags">Tags</a>
+    </li>
+  </ul>
+
+  <div class="aside-body p-0">
+
+    <div class="tab-content">
+      <div class="tab-pane fade active show" id="tab-contacts">
+        <div class="media-list media-list-hover">
+          <header class="media-list-header b-0">
+            <form class="lookup lookup-lg w-100 bb-1 border-light">
+              <input class="w-100 no-radius no-border py-30" type="text" placeholder="Search..." data-provide="media-search">
+            </form>
+          </header>
+
+          <a class="media items-center" href="#">
+            <span class="avatar avatar-sm bg-secondary">JT</span>
+            <p class="title">Joe Tebaldi</p>        
+            <span class="media-action text-success"><i class="ti-plus"></i></span>
+          </a>
+
+          <a class="media items-center" href="#">
+            <span class="avatar avatar-sm bg-secondary">PC</span>
+            <p class="title">Paulo Castro</p>        
+            <span class="media-action text-success"><i class="ti-plus"></i></span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="tab-groups">
+
+        <div class="media-list media-list-hover media-list-divided">
+          <a class="media media-single" href="#">
+            <span class="title">All Contacts</span>
+            <span class="badge badge-pill badge-secondary">14</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Leads</span>
+            <span class="badge badge-pill badge-primary">9</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Prospects</span>
+            <span class="badge badge-pill badge-info">7</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Customers</span>
+            <span class="badge badge-pill badge-success">3</span>
+          </a>
+        </div>
+
+        <hr class="hr-sm">
+
+        <div class="aside-block">
+          <h6 class="aside-title">User Defined</h6>
+        </div>
+
+      </div>
+
+      <div class="tab-pane fade" id="tab-tags">
+        <div class="media-list media-list-hover media-list-divided">
+          <header class="media-list-header b-0">
+            <form class="lookup lookup-lg w-100 bb-1 border-light">
+              <input class="w-100 no-radius no-border py-30" type="text" placeholder="Search..." data-provide="media-search">
+            </form>
+          </header>
+
+          <a class="media media-single" href="#">
+            <span class="title">Remote</span>
+            <span class="badge badge-pill badge-secondary">14</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Personal Training</span>
+            <span class="badge badge-pill badge-primary">9</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Grand Opening</span>
+            <span class="badge badge-pill badge-info">7</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Athlete</span>
+            <span class="badge badge-pill badge-success">3</span>
+          </a>
+
+          <a class="media media-single" href="#">
+            <span class="title">Masters</span>
+            <span class="badge badge-pill badge-danger">4</span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="aside-toggler"></button>
+</aside>
+<!-- END ASIDE: Actions -->

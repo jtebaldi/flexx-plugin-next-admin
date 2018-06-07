@@ -14,7 +14,7 @@ class Next::DashboardController < CamaleonCms::CamaleonController
   def media
   end
 
-  def actions
+  def messaging
   end
 
   def gyms

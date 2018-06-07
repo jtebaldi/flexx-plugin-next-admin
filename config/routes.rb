@@ -19,7 +19,7 @@ Rails.application.routes.draw do
           get "/settings" => "dashboard#settings"
           get "/crm" => "dashboard#crm"
           get "/media" => "dashboard#media"
-          get "/actions" => "dashboard#actions"
+          get "/message-center" => "dashboard#messaging"
           get "/gyms" => "dashboard#gyms"
           get "/website" => "dashboard#website"
         end
