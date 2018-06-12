@@ -6,7 +6,7 @@
 
   <div class="quickview-body">
     <div class="media-list media-list-hover media-list-divided media-sm">
-      <a class="media media-new" href="/admin/next/contacts/<%= current_site.contacts.active.order('created_at DESC').last.id %>">
+      <a class="media media-new" href="/admin/next/contacts/<%= current_site.contacts.active.order('created_at ASC').last.id %>">
         <span class="avatar bg-success"><i class="ti-user"></i></span>
         <div class="media-body">
           <p>New contact received</p>

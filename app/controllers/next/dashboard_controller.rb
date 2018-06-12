@@ -17,6 +17,12 @@ class Next::DashboardController < CamaleonCms::CamaleonController
   def messaging
   end
 
+  def conversations_email
+  end
+
+  def conversations_text
+  end
+
   def gyms
   end
 
