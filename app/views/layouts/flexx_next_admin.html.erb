@@ -14,6 +14,8 @@
     <%= stylesheet_link_tag    'plugins/flexx_plugin_next_admin/main', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', media: 'all', 'data-turbolinks-track' => true %>
 
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/base' %>
+
     <%= csrf_meta_tags %>
   </head>
 
@@ -40,8 +42,8 @@
       <%= yield %>
 
       <!-- FAB
-      <%= render 'next/partials/fab_lightning' %> 
-      
+      <%= render 'next/partials/fab_lightning' %>
+
 
       <!-- Footer -->
       <%= render 'layouts/footer' %>
@@ -59,10 +61,10 @@
     <!-- END Global quickview -->
 
     <!-- Scripts -->
-    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/core.min', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/vendors', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/app', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/next_admin', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/core.min' %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/vendors' %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/app' %>
+    <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/next_admin' %>
     <%= yield :js %>
 
   </body>

@@ -1,4 +1,3 @@
-//= require jquery
 //= require jquery_ujs
 
 // TheAdmin theme requires this call to initialize
