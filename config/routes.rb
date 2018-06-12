@@ -18,7 +18,9 @@ Rails.application.routes.draw do
           get "/settings" => "dashboard#settings"
           get "/crm" => "dashboard#crm"
           get "/media" => "dashboard#media"
-          get "/message-center" => "dashboard#messaging"
+          get "/messaging" => "dashboard#messaging"
+          get "/conversations-email" => "dashboard#conversations_email"
+          get "/conversations-text" => "dashboard#conversations_text"
           get "/gyms" => "dashboard#gyms"
           get "/website" => "dashboard#website"
         end
