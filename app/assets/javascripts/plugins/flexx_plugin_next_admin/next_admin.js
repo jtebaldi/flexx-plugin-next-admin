@@ -5,7 +5,7 @@ $(document).ready(function(){
   app.config();
 
   $('.datetimepicker').datetimepicker({ format: "mm/dd/yyyy - HH:ii P", showMeridian: true, todayBtn: true, autoclose: true });
-})
+});
 
 function sortMe(parent, childrenTag, dataAttr, direction) {
   var records = $(parent).children(childrenTag);
