@@ -48,7 +48,7 @@
   },
 
   publicMethods = {
-    pushTag: function (tag, ignoreEvents, externalTagId, ignoreValidator) {
+    pushTag: function (tag, ignoreEvents, externalTagId, ignoreValidator, customTagId) {
       var $self = $(this), opts = $self.data('opts'), alreadyInList, tlisLowerCase, max, tagId,
       tlis = $self.data("tlis"), tlid = $self.data("tlid"), idx, newTagId, newTagRemoveId, escaped,
       html, $el, lastTagId, lastTagObj;
@@ -138,6 +138,12 @@
         tlis.push(tag);
         tlid.push(tagId);
 
+        if (customTagId !== undefined) {
+          $self.data('tlcid').push(customTagId.toString().replace(' ', '___'));
+        } else {
+          $self.data('tlcid').push(tag.replace(' ', '___'));
+        }
+
         if (!ignoreEvents)
           if (opts.AjaxPush !== null && opts.AjaxPushAllTags == null) {
             if ($.inArray(tag, opts.prefilled) === -1) {
@@ -157,7 +163,7 @@
         html += opts.tagCloseIcon + '</a></span> ';
         $el = $(html);
 
-        
+
         var typeAheadMess = $self.parents('.twitter-typeahead')[0] !== undefined;
         if (opts.tagsContainer !== null) {
           $(opts.tagsContainer).append($el);
@@ -200,7 +206,8 @@
     popTag: function () {
       var $self = $(this), tagId, tagBeingRemoved,
       tlis = $self.data("tlis"),
-      tlid = $self.data("tlid");
+      tlid = $self.data("tlid"),
+      tlcid = $self.data("tlcid");
 
       if (tlid.length > 0) {
         tagId = tlid.pop();
@@ -208,6 +215,7 @@
         tagBeingRemoved = tlis[tlis.length - 1];
         $self.trigger('tm:popping', [tagBeingRemoved, tagId]);
         tlis.pop();
+        tlcid.pop();
 
         // console.log("TagIdToRemove: " + tagId);
         $("#" + $self.data("tm_rndid") + "_" + tagId).remove();
@@ -215,7 +223,7 @@
         $self.trigger('tm:popped', [tagBeingRemoved, tagId]);
 
         privateMethods.showOrHide.call($self);
-        // console.log(tlis);
+        // console.log(tlis);tlis
       }
     },
 
@@ -241,6 +249,11 @@
     tags: function () {
       var $self = this, tlis = $self.data("tlis");
       return tlis;
+    },
+
+    customTagIds: function () {
+      var $self = this, tlcid = $self.data("tlcid");
+      return tlcid;
     }
   },
 
@@ -337,7 +350,7 @@
     },
 
     spliceTag: function (tagId) {
-      var $self = this, tlis = $self.data("tlis"), tlid = $self.data("tlid"), idx = $.inArray(tagId, tlid),
+      var $self = this, tlis = $self.data("tlis"), tlid = $self.data("tlid"), tlcid = $self.data("tlcid"), idx = $.inArray(tagId, tlid),
       tagBeingRemoved;
 
       // console.log("TagIdToRemove: " + tagId);
@@ -349,6 +362,7 @@
         $("#" + $self.data("tm_rndid") + "_" + tagId).remove();
         tlis.splice(idx, 1);
         tlid.splice(idx, 1);
+        tlcid.splice(idx, 1);
         privateMethods.refreshHiddenTagList.call($self);
         $self.trigger('tm:spliced', [tagBeingRemoved, tagId]);
         // console.log(tlis);
@@ -402,7 +416,8 @@
         // store instance-specific data in the DOM object
         $self.data('opts', opts)
             .data('tlis', []) //list of string tags
-            .data('tlid', []); //list of ID of the string tags
+            .data('tlid', []) //list of ID of the string tags
+            .data('tlcid', []); // list of custom IDs
 
         if (opts.output === null) {
           hiddenObj = $('<input/>', {
