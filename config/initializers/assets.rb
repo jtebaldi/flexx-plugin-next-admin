@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( base next_admin ckeditor)
+Rails.application.config.assets.precompile += %w( base next_admin )
