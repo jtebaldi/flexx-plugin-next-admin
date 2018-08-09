@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
     scope PluginRoutes.system_info["relative_url_root"] do
       scope '(:locale)', locale: /#{PluginRoutes.all_locales}/, :defaults => {  } do
         # frontend
@@ -15,6 +14,12 @@ Rails.application.routes.draw do
         namespace :next do
           resources :campaigns
           resources :dashboard
+
+          namespace :website do
+            root to: :index
+            get :new_page
+          end
+
           get "/settings" => "dashboard#settings"
           get "/crm" => "dashboard#crm"
           get "/media" => "dashboard#media"
@@ -22,7 +27,7 @@ Rails.application.routes.draw do
           get "/conversations-email" => "dashboard#conversations_email"
           get "/conversations-text" => "dashboard#conversations_text"
           get "/gyms" => "dashboard#gyms"
-          get "/website" => "dashboard#website"
+
         end
 
         namespace 'plugins' do
