@@ -1,7 +1,7 @@
 <div class="main-content">
 
   <div class="row">
-    
+
     <div class="col-lg-3 col-md-6">
       <div class="card">
         <div class="card-body">
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="col-md-6">
       <div class="card">
         <h5 class="card-title"><strong>Recent</strong> contacts</h5>
@@ -76,7 +76,7 @@
               <% if contact.created_at > 24.hours.ago %>
                 <i class="fa fa-bolt text-yellow"></i>
               <% end %>
-              <a href="<%= admin_view_contact_path(contact.id) %>">
+              <a href="<%= admin_contact_path(contact.id) %>">
                 <span class="avatar avatar-lg status-<%= contact.sales_stage %>"><%= contact.initials %></span>
               </a>
 
@@ -86,7 +86,7 @@
               </div>
 
               <div class="media-right">
-                <a class="btn btn-sm btn-bold btn-round btn-outline btn-secondary w-100px" href="<%= admin_view_contact_path(contact.id) %>">View</a>
+                <a class="btn btn-sm btn-bold btn-round btn-outline btn-secondary w-100px" href="<%= admin_contact_path(contact.id) %>">View</a>
               </div>
             </div>
           <% end %>
