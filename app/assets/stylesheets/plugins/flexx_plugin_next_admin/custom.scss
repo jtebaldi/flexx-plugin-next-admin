@@ -47,3 +47,10 @@ $customer-color-primary: #28a745;
 
 .bootstrap-tagsinput { display: block; }
 
+// --------------- CRM: Message Blast
+
+// Email lists
+#tab-email-recent {
+  .media-list .media p { line-height: 32px; }
+  .flexbox li { line-height: 8px; padding-top: 10px; }
+}

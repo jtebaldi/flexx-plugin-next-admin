@@ -27,6 +27,9 @@ Rails.application.routes.draw do
           get "/conversations-email" => "dashboard#conversations_email"
           get "/conversations-text" => "dashboard#conversations_text"
           get "/gyms" => "dashboard#gyms"
+          
+          get "/stock" => "dashboard#stock"
+          get "/stock_new" => "dashboard#stock_new"
 
         end
 
