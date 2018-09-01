@@ -28,4 +28,10 @@ class Next::DashboardController < CamaleonCms::CamaleonController
 
   def website
   end
+
+  def stock
+  end
+
+  def stock_new
+  end
 end
