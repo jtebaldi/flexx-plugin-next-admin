@@ -33,7 +33,7 @@ $customer-color-primary: #28a745;
   .topbar-mobile.logo { display: block; }
 }
 
-.header-bar.bg-info { 
+.header-bar.bg-info {
   h1, h2, h3, h4, h5, a, li, span { color: #fff !important; }
 }
 
@@ -53,4 +53,8 @@ $customer-color-primary: #28a745;
 #tab-email-recent {
   .media-list .media p { line-height: 32px; }
   .flexbox li { line-height: 8px; padding-top: 10px; }
+}
+
+.hidden {
+  display: none;
 }
