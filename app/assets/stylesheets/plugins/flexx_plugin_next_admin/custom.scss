@@ -47,6 +47,8 @@ $customer-color-primary: #28a745;
 
 .bootstrap-tagsinput { display: block; }
 
+input[type=radio].hide-control { display: none; }
+
 // --------------- CRM: Message Blast
 
 // Email lists

@@ -14,13 +14,13 @@ Rails.application.routes.draw do
         namespace :next do
           resources :campaigns
           resources :dashboard
+          resources :settings
 
           namespace :website do
             root to: :index
             get :new_page
           end
 
-          get "/settings" => "dashboard#settings"
           get "/crm" => "dashboard#crm"
           get "/media" => "dashboard#media"
           get "/messaging" => "dashboard#messaging"
@@ -29,7 +29,6 @@ Rails.application.routes.draw do
           get "/gyms" => "dashboard#gyms"
           
           get "/stock" => "dashboard#stock"
-          get "/stock_new" => "dashboard#stock_new"
 
         end
 
