@@ -9,13 +9,7 @@
     <span class="topbar-mobile logo">
       <img style="width: 100%; max-width: 120px; opacity: .8;" src="https://d15fieipd5pxyz.cloudfront.net/flexxco/flexx_final_dark_copy.png" alt="logo">
     </span>
-    <div class="lookup d-none d-md-block topbar-search">
-      <input class="form-control w-300px" type="text">
-      <div class="lookup-placeholder">
-        <i class="ti-search"></i>
-        <span><strong>Try</strong> contacts, tags, posts, settings, etc.</span>
-      </div>
-    </div>
+    <h4 class="topbar-title text-uppercase d-none d-sm-block"><%= current_site.the_title %></h4>
   </div>
 
   <div class="topbar-right">
@@ -24,22 +18,14 @@
       <li class="dropdown">
         <span class="topbar-btn" data-toggle="dropdown"><span class="avatar">jt</span>
         <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="../page/profile.html"><i class="ti-user"></i> Profile</a>
-          <a class="dropdown-item" href="../page-app/mailbox.html">
-            <div class="flexbox">
-              <i class="ti-email"></i>
-              <span class="flex-grow">Inbox</span>
-              <span class="badge badge-pill badge-info">5</span>
-            </div>
-          </a>
-          <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
+          <a class="dropdown-item" href="/admin/next/settings"><i class="ti-user"></i> Profile</a>
+          <a class="dropdown-item" href="/admin/next/settings"><i class="ti-settings"></i> Settings</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="../page-extra/user-lock-1.html"><i class="ti-lock"></i> Lock</a>
-          <a class="dropdown-item" href="../page-extra/user-login-3.html"><i class="ti-power-off"></i> Logout</a>
+          <a class="dropdown-item" href="#"><i class="ti-power-off"></i> Logout</a>
         </div>
       </li>
 
-      <!-- Notifications -->
+      <!-- START Notifications 
       <li class="d-none d-md-block">
         <a href="#qv-notifications" data-toggle="quickview" class="topbar-btn has-new"><i class="ti-bell"></i></a>
         <div class="dropdown-menu dropdown-menu-right">
@@ -67,7 +53,14 @@
 
         </div>
       </li>
-      <!-- END Notifications -->
+      END Notifications -->
+
+      <!-- START Search
+      <li>
+        <button data-toggle="lookup" data-target="#lookup-full" class="topbar-btn" style="color:#4d5259;"><i class="ti-search"></i></button>
+      </li>
+      END Search-->
+
     </ul>
 
   </div>

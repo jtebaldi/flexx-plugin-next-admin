@@ -34,21 +34,22 @@
     <%= render 'layouts/sidebar' %>
 
     <!-- Topbar -->
-    <%= render 'layouts/topbar' %>
+    <%= render 'layouts/topbar' %>    
 
     <!-- Main container -->
     <main class="main-container">
 
       <%= yield %>
 
-      <!-- FAB
-      <%= render 'next/partials/fab_lightning' %>
+      <!-- Fullscreen Search -->
+      <%= render 'layouts/search_layer' %>
 
+      <!-- FAB <%= render 'next/partials/fab_lightning' %> 
+
+      <%= render 'layouts/qv_notifications' %>
 
       <!-- Footer -->
       <%= render 'layouts/footer' %>
-
-      <%= render 'layouts/qv_notifications' %>
     </main>
     <!-- END Main container -->
 

@@ -1,0 +1,272 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // PROMPT TEXT OR EMAIL BLAST BASED ON INCOMING URL
+    
+    //grabs the hash tag from the url
+    var hash = window.location.hash;
+    //checks whether or not the hash tag is set
+    if (hash != "") {
+
+      //this will add the active class on the hashtagged value
+      $('#message-tab-content div').each(function() {
+        link = $(this).attr('id');
+        if ('#'+link == hash) {
+          $(this).addClass('active show');
+        } else {
+          $(this).removeClass('active show');
+        }
+      });
+    }
+
+  });
+</script>
+
+<div class="main-content">
+  <div class="tab-content" id="message-tab-content">
+
+    <div class="tab-pane fade active show" id="membership">
+      <div class="col-lg-12">
+        <div class="card">
+          <h4 class="card-title"><strong>Create new membership option</strong></h4>
+
+          <div class="card-body">
+            <form class="form-type-combine" data-provide="wizard">
+              <ul class="nav nav-process nav-process-circle">
+                <li class="nav-item">
+                  <span class="nav-title">Details</span>
+                  <a class="nav-link" data-toggle="tab" href="#wizard-form-1"></a>
+                </li>
+
+                <li class="nav-item">
+                  <span class="nav-title">Pricing</span>
+                  <a class="nav-link" data-toggle="tab" href="#wizard-form-2"></a>
+                </li>
+
+                <li class="nav-item">
+                  <span class="nav-title">Location</span>
+                  <a class="nav-link" data-toggle="tab" href="#wizard-form-3"></a>
+                </li>
+
+                <li class="nav-item">
+                  <span class="nav-title">Confirmation</span>
+                  <a class="nav-link" data-toggle="tab" href="#wizard-form-4"></a>
+                </li>
+              </ul>
+
+
+              <div class="tab-content">
+                <div class="tab-pane fade active show" id="wizard-form-1">
+                  <br><br>
+                  <p class="text-center fs-35 text-muted">Create a new <strong class="text-primary">membership</strong></p>
+                  <hr class="w-100px">
+                  <br>
+
+                  <div class="form-groups-attached">
+          
+                    <div class="form-group">
+                      <label>Membership Name</label>
+                      <input class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Short Description</label>
+                      <textarea class="form-control" rows="2"></textarea>
+                      <small class="form-text">Will appear on invoices, receipts, shopping cart, etc. Maximum of 250 characters.</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Long Description</label>
+                      <textarea class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group form-type-combine file-group file-browser">
+                      <label for="file-input-combine">Associated image</label>
+                      <input type="text" class="form-control file-value" id="file-input-combine" readonly>
+                      <input type="file" multiple>
+                      <small class="form-text">Will appear on invoices, receipts, shopping cart, etc. (Optional)</small>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+                <div class="tab-pane fade" id="wizard-form-2">
+                  <br><br>
+                  <p class="text-center fs-35 text-muted">New membership <strong class="text-primary">pricing</strong></p>
+                  <hr class="w-100px">
+                  <br>              
+
+                  <h6 class="text-light fw-300">Subscription Info</h6>
+
+                  <div class="form-groups-attached">
+
+                    <div class="row">
+                      <div class="form-group col-4">
+                        <label>Price</label>
+                        <input class="form-control" type="text">
+                      </div>
+
+                      <div class="form-group form-type-combine col-4">
+                        <label>Bill customer</label>
+                        <input class="form-control" type="text">
+                      </div>
+
+                      <div class="form-group form-type-combine col-4">
+                        <label>Every</label>
+
+                        <select class="form-control" data-provide="selectpicker">
+                          <option>Day</option>
+                          <option>Week</option>
+                          <option>Month</option>
+                          <option>Year</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">                    
+                      <div class="form-group col-6">
+                        <label>Enrollment fee</label>
+                        <input class="form-control" type="text">
+                      </div>
+                      <div class="form-group col-6">
+                        <label class="switch">
+                          <input type="checkbox">
+                          <span class="switch-indicator"></span>
+                          <span class="switch-description">Editable on checkout?</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-6">
+                        <label class="switch">
+                          <input type="checkbox" checked="">
+                          <span class="switch-indicator"></span>
+                          <span class="switch-description">Allow Paid in Full</span>
+                        </label>
+                      </div>
+
+                      <div class="form-group col-6">
+                        <label>Paid in Full Discount</label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <h6 class="text-light fw-300">Subscription Info</h6>
+
+                  <div class="form-groups-attached">
+
+                    <div class="row">
+                      <div class="form-group col-6">
+                        <label>Price</label>
+                        <input class="form-control" type="text">
+                      </div>
+
+                      <div class="form-group form-type-combine col-6">
+                        <label>Allowed Payment Options</label>
+
+                        <select class="form-control" data-provide="selectpicker" multiple>
+                          <option>Debit / Credit Card</option>
+                          <option>ACH</option>
+                          <option>Cash</option>
+                          <option>Check</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="switch">
+                        <input type="checkbox" checked="">
+                        <span class="switch-indicator"></span>
+                        <span class="switch-description">Allow Paid in Full</span>
+                      </label>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+                <div class="tab-pane fade" id="wizard-form-3">
+                  <br><br>
+                  <p class="text-center fs-35 text-muted">Save your <strong class="text-primary">credit card</strong></p>
+                  <p class="text-center text-gray">Credibly evolve leveraged experiences vis-a-vis exceptional testing procedures. Assertively.</p>
+                  <hr class="w-100px">
+                  <br>
+
+                  <div class="row">
+                    <div class="form-group col-12">
+                      <label>Card number</label>
+                      <input class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group col-6">
+                      <label>Expiry date</label>
+                      <input class="form-control" type="text" placeholder="MM / YY">
+                    </div>
+
+                    <div class="form-group col-6">
+                      <label>CVC</label>
+                      <input class="form-control" type="text">
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+                <div class="tab-pane fade" id="wizard-form-4">
+                  <br><br>
+                  <p class="text-center fs-35 text-muted">Ready to go?</p>
+                  <p class="text-center text-gray">Rapidiously facilitate web-enabled products through innovative collaboration.</p>
+                  <hr class="w-100px">
+                  <br>
+
+                  <div class="px-20">
+                    <div class="form-group row">
+                      <label class="col-form-label col-sm-4">Username</label>
+                      <div class="form-control-plaintext col-sm-8">TheAdmin</div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-form-label col-sm-4">Email</label>
+                      <div class="form-control-plaintext col-sm-8">support@theadmin.io</div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-form-label col-sm-4">Card number</label>
+                      <div class="form-control-plaintext col-sm-8">xxxx-xxxx-xxxx-3648</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="flexbox">
+                <button class="btn btn-secondary" data-wizard="prev" type="button">Back</button>
+                <button class="btn btn-secondary" data-wizard="next" type="button">Next</button>
+                <button class="btn btn-primary d-none" data-wizard="finish" type="submit">Finish</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="product">
+      <h1>Add new product</h1>
+    </div>
+
+    <div class="tab-pane fade" id="package">
+      <h1>Add new package</h1>
+    </div>
+  
+  </div>
+</div>
