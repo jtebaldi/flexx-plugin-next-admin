@@ -60,3 +60,9 @@ input[type=radio].hide-control { display: none; }
 .hidden {
   display: none;
 }
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+
+}
