@@ -26,9 +26,6 @@ Rails.application.routes.draw do
           get "/messaging" => "dashboard#messaging"
           get "/conversations-email" => "dashboard#conversations_email"
           get "/gyms" => "dashboard#gyms"
-
-          get "/stock" => "dashboard#stock"
-
         end
 
         namespace 'plugins' do
