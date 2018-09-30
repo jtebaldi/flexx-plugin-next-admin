@@ -3019,9 +3019,7 @@ jQuery.fn.scrollToEnd = function() {
 
       var list = $(this).find('[data-shuffle="list"]');
       var filter = $(this).find('[data-shuffle="filter"]');
-      var shuffleInstance = new Shuffle(list);
-
-
+      window.shuffleInstance = new Shuffle(list);
 
       if ( filter.length ) {
 
@@ -3042,16 +3040,16 @@ jQuery.fn.scrollToEnd = function() {
               filterGroup = btnGroup;
             }
 
-            shuffleInstance.filter(filterGroup);
+            window.shuffleInstance.filter(filterGroup);
           });
         });
 
       }
 
 
-      $( this ).imagesLoaded( function() {
-        shuffleInstance.layout()
-      } );
+      // $( this ).imagesLoaded( function() {
+      //   shuffleInstance.layout()
+      // } );
 
     });
 

@@ -13,6 +13,7 @@
     <!-- Styles -->
     <%= stylesheet_link_tag    'plugins/flexx_plugin_next_admin/main', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', media: 'all', 'data-turbolinks-track' => true %>
+    <%= yield :css %>
 
     <%= javascript_include_tag 'plugins/flexx_plugin_next_admin/base' %>
 
@@ -34,7 +35,7 @@
     <%= render 'layouts/sidebar' %>
 
     <!-- Topbar -->
-    <%= render 'layouts/topbar' %>    
+    <%= render 'layouts/topbar' %>
 
     <!-- Main container -->
     <main class="main-container">
@@ -44,7 +45,7 @@
       <!-- Fullscreen Search -->
       <%= render 'layouts/search_layer' %>
 
-      <!-- FAB <%= render 'next/partials/fab_lightning' %> 
+      <!-- FAB <%= render 'next/partials/fab_lightning' %>
 
       <%= render 'layouts/qv_notifications' %>
 
