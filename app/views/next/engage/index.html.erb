@@ -23,11 +23,11 @@
         </div>
 
         <div class="flexbox flex-justified bt-1 border-light py-12 bg-lightest text-center">
-          <a class="text-muted pt-2" href="<%= new_admin_message_path() %>">
+          <a class="text-muted pt-2" href="<%= new_email_admin_messages_path() %>">
             <i class="ti-plus fs-25"></i><br>
             New
           </a>
-          <a class="text-muted pt-2" href="<%= admin_messages_path() %>">
+          <a class="text-muted pt-2" href="<%= emails_admin_messages_path() %>">
             <i class="ti-view-grid fs-25"></i><br>
             View
           </a>
@@ -38,18 +38,18 @@
     <div class="col-md-6 col-xl-4">
       <div class="card">
         <div class="card-body text-center">
-          <a href="<%= admin_messages_path() %>">
+          <a href="<%= sms_admin_messages_path() %>">
             <i class="ti-mobile fs-90 text-dark"></i>
           </a>
           <h5 class="m-1"><a class="hover-info" href="#">SMS Blasts</a></h5>
         </div>
 
         <div class="flexbox flex-justified bt-1 border-light py-12 bg-lightest text-center">
-          <a class="text-muted pt-2" href="#">
+          <a class="text-muted pt-2" href="<%= new_sms_admin_messages_path() %>">
             <i class="ti-plus fs-25"></i><br>
             New
           </a>
-          <a class="text-muted pt-2" href="#">
+          <a class="text-muted pt-2" href="<%= sms_admin_messages_path() %>">
             <i class="ti-view-grid fs-25"></i><br>
             View
           </a>
