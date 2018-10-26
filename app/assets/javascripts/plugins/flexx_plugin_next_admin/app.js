@@ -5045,7 +5045,8 @@ jQuery.fn.scrollToEnd = function() {
       var circle = $(box).find("circle");
       circle.animate(
         {
-          "r" : $(box).outerWidth()
+          "width" : $(box).outerWidth(),
+          "height" : $(box).outerWidth()
         },
         {
           duration: 400,
