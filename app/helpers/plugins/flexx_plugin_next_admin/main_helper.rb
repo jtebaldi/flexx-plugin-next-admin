@@ -27,10 +27,19 @@ module Plugins::FlexxPluginNextAdmin::MainHelper
     args[:links] << link_to('Settings', admin_plugins_flexx_plugin_next_admin_settings_path)
   end
 
+  def get_plugin
+    plugin = current_site.plugins.find_by_slug("flexx_plugin_next_admin")
+  end
+
   def flexx_plugin_next_admin_on_render_admin_dashboard(args) # methods dont need to have these big names
-    args.tap do |a|
-      a[:layout] = "layouts/flexx_next_admin"
-      a[:render] = "next/dashboard"
+    dashboard_route = get_plugin.get_option('dashboard_route')
+
+    if dashboard_route == 'new'
+      args.tap do |a|
+        a[:layout] = "layouts/flexx_next_admin"
+        a[:render] = "/next/dashboard"
+      end
     end
+
   end
 end
