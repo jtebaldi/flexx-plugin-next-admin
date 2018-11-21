@@ -4,28 +4,32 @@ $pending-color-primary: #333;
 $lead-color-primary: #fd7e14;
 $prospect-color-primary: #48b0f7;
 $customer-color-primary: #28a745;
+$archived-color-primary: #ccc;
 
 .text-pending { color: $pending-color-primary !important; }
 .text-lead { color: $lead-color-primary !important; }
 .text-prospect { color: $prospect-color-primary !important; }
 .text-customer { color: $customer-color-primary !important; }
+.text-archived { color: $archived-color-primary !important; }
 
 .badge-lead, .avatar.status-lead::after { background-color: $lead-color-primary; }
 .badge-prospect, .avatar.status-prospect::after { background-color: $prospect-color-primary; }
 .badge-customer, .avatar.status-customer::after { background-color: $customer-color-primary; }
+.badge-archived, .avatar.status-archived::after { background-color: $archived-color-primary; }
 
-.badge-lead, .badge-prospect, .badge-customer, .badge-yellow { color: #fff; }
+.badge-lead, .badge-prospect, .badge-customer, .badge-yellow, .badge-archived { color: #fff; }
 
-.card-pending, .card-lead, .card-prospect, .card-customer, .btn-lead, .btn-prospect, .btn-customer { color: #fff; }
+.card-pending, .card-lead, .card-prospect, .card-archived, .card-customer, .btn-lead, .btn-prospect, .btn-customer, .btn-archived { color: #fff; }
 .card-pending { background-color: $pending-color-primary; border-color: $pending-color-primary; }
 .card-lead, .btn-lead { background-color: $lead-color-primary; border-color: $lead-color-primary; }
 .card-prospect, .btn-prospect { background-color: $prospect-color-primary; border-color: $prospect-color-primary; }
 .card-customer, .btn-customer { background-color: $customer-color-primary; border-color: $customer-color-primary; }
+.card-archived, .btn-archived { background-color: $archived-color-primary; border-color: $archived-color-primary; }
 
-.btn-lead:hover, .btn-prospect:hover, .btn-customer:hover { color: #fff; }
+.btn-lead:hover, .btn-prospect:hover, .btn-customer:hover, .btn-archived:hover { color: #fff; }
 .btn-lead:hover { background-color: lighten($lead-color-primary, 10%); border-color: lighten($lead-color-primary, 10%); }
 .btn-prospect:hover { background-color: lighten($prospect-color-primary, 10%); border-color: lighten($prospect-color-primary, 10%); }
-.btn-customer:hover { background-color: lighten($customer-color-primary, 10%); border-color: lighten($customer-color-primary, 10%); }
+.btn-customer:hover { background-color: lighten($customer-color-primary, 10%); border-color: lighten($customer-color-primary, 10%); }.btn-archived:hover { background-color: lighten($archived-color-primary, 10%); border-color: lighten($archived-color-primary, 10%); }
 
 .topbar-mobile.logo { display: none; }
 
