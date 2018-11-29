@@ -71,6 +71,18 @@ input[type=radio].hide-control { display: none; }
 
 }
 
+// Form Validation - Custom classes
+
+.form-type-material .form-group {
+  input.invalid {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f96868), to(#f96868)),-webkit-gradient(linear, left top, left bottom, from(#f96868), to(#f96868));
+    background-image: -webkit-linear-gradient(#f96868, #f96868),-webkit-linear-gradient(#f96868, #f96868);
+    background-image: linear-gradient(#f96868, #f96868),linear-gradient(#f96868, #f96868);
+    border: none;
+  }
+  div.invalid { color: #f96868; }
+}
+
 /*** Styles added to fix the issue with zoom in on iphone ***/
 /* iPhone < 5: */
 @media screen and (device-aspect-ratio: 2/3) {
