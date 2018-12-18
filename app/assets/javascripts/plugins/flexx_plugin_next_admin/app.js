@@ -4038,6 +4038,7 @@ jQuery.fn.scrollToEnd = function() {
         $(e).html('<div class="spinner-linear"><div class="line"></div></div>');
         $(e).load(url, function() {
           $('.quickview-body').perfectScrollbar();
+          $(e).trigger('qv.loaded');
         });
       }
       quickview.open(e);
