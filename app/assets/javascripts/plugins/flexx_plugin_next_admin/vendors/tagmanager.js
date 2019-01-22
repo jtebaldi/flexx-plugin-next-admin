@@ -334,6 +334,8 @@
       $.each(pta, function (key, val) {
         if (opts.externalTagId === true) {
           publicMethods.pushTag.call($self, val[opts.prefillValueFieldName], true, val[opts.prefillIdFieldName], true);
+        } else if (typeof (val) === "object") {
+          publicMethods.pushTag.call($self, val['label'], true, false, true, val['value']);
         } else {
           publicMethods.pushTag.call($self, val, true, false, true);
         }
