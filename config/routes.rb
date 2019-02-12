@@ -15,7 +15,6 @@ Rails.application.routes.draw do
           resources :campaigns
           resources :dashboard
           resources :settings
-          resources :engage
 
           namespace :website do
             root to: :index
