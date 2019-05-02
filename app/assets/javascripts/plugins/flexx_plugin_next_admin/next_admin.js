@@ -1,3 +1,8 @@
+/*
+* *** W A R N I N G ***
+* DO NOT REMOVE THE FOLLOWING REQUIRE
+* or Rails remote=true feature will stop work.
+*/
 //= require jquery_ujs
 
 // TheAdmin theme requires this call to initialize
